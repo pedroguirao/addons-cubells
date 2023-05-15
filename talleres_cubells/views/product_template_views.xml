@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="product_template_form_view_inherit_talleres_cubells" model="ir.ui.view">
+        <field name="name">product.template.form.inherit</field>
+        <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="codigo_empresa" />
+                </field>
+                <field name="list_price" position="after">
+                    <field name="descuento_compras" />
+                    <field name="fecha_precio" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

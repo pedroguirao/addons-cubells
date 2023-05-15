@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="inherit_report_invoice_document" inherit_id="account.report_invoice_document">
+        <!--<xpath expr="//div[2]//div[4]" position="replace"/>-->
+        <xpath expr="//div[@class='page']/div[2]//div[3]" position="replace"/>
+        <xpath expr="//table[@class='table table-condensed']/thead/tr//th[6]" position="replace"/>
+        <xpath expr="//tr[@t-foreach='o.invoice_line_ids']//td[6]" position="replace"/>
+        <xpath expr="//p[@t-if='o.comment']" position="before">
+            <p t-if="o.payment_mode_id">
+                <strong>Payment Mode:</strong>
+                <span t-field="o.payment_mode_id.name"/>
+                <span t-if="o.payment_term_id">
+                    <span t-field="o.payment_term_id.note"/>
+                </span>
+            </p>
+            <p>
+                <strong>Bank:</strong>
+                <span t-if="o.payment_mode_id.name == 'Giro Domiciliado'">
+                    <span t-if="o.partner_bank_acc_id">
+                        <t t-esc="o.parser_bank_acc(o.partner_bank_acc_id)"/>
+                    </span>
+                </span>
+
+                <span t-if="o.payment_mode_id.name != 'Giro Domiciliado'">
+                    <t t-set="is_first" t-value="True"/>
+                    <t t-foreach="o.company_id.bank_journal_ids" t-as="journal">
+                        <t t-set="bank_acc" t-value="journal.bank_account_id"/>
+                        <t t-if="journal.pnt_display_on_footer">
+                            <span t-esc="bank_acc.acc_number"/>
+                            <t t-set="is_first" t-value="False"/>
+                        </t>
+                    </t>
+                </span>
+                <p>
+                    <span t-if="o.move_id.line_ids">
+                        <strong>Vencimientos:</strong>
+                        <t t-foreach="o.move_id.line_ids" t-as="l">
+                            <t t-if="l.account_id.user_type_id.name =='Por cobrar'">
+                                <br/>
+                                Vencimiento:
+                                <span t-field="l.date_maturity"/>
+                                Importe:
+                                <span t-field="l.debit"/>
+                            </t>
+                        </t>
+                    </span>
+                </p>
+            </p>
+        </xpath>
+    </template>
+
+    <template id="report_invoice_document_inherit_sale" inherit_id="sale.report_invoice_document_inherit_sale">
+        <xpath expr="//div[@t-field='o.partner_shipping_id']/../.." position="replace"/>
+    </template>
+</odoo>

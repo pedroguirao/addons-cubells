@@ -1,0 +1,188 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* talleres_cubells
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 14:45+0000\n"
+"PO-Revision-Date: 2017-03-24 14:45+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_product_template_descuento_compras
+msgid "% Descuento Compras"
+msgstr "% Descuento Compras"
+
+#. module: talleres_cubells
+#: model:ir.model,name:talleres_cubells.model_account_account
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_actividad
+msgid "Actividad"
+msgstr "Actividad"
+
+#. module: talleres_cubells
+#: model:ir.model,name:talleres_cubells.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Cuentas bancarias"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_ccc
+msgid "CCC"
+msgstr "CCC"
+
+#. module: talleres_cubells
+#: model:ir.ui.view,arch_db:talleres_cubells.view_partner_property_form_inherit_talleres_cubells
+msgid "CIF Europeo"
+msgstr "CIF Europeo"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_account_account_cif_dni
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_cif_dni
+msgid "CIF/DNI"
+msgstr "CIF/DNI"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_cargo
+msgid "Cargo"
+msgstr "Cargo"
+
+#. module: talleres_cubells
+#: selection:account.account,cliente_o_proveedor:0
+msgid "Cliente"
+msgstr "Cliente"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_account_account_cliente_o_proveedor
+msgid "Cliente o Proveedor"
+msgstr "Cliente o Proveedor"
+
+#. module: talleres_cubells
+#: model:account.account.type,name:talleres_cubells.tipo_clientes
+msgid "Clientes"
+msgstr "Clientes"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_codigo_agencia
+msgid "Codigo Agencia"
+msgstr "Codigo Agencia"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_codigo_banco
+msgid "Codigo Banco"
+msgstr "Codigo Banco"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_codigo_condiciones
+msgid "Codigo Condiciones"
+msgstr "Codigo Condiciones"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_codigo_definicion
+msgid "Codigo Definicion"
+msgstr "Codigo Definicion"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_product_template_codigo_empresa
+msgid "Codigo Empresa"
+msgstr "Codigo Empresa"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_codigo_sigla
+msgid "Codigo Sigla"
+msgstr "Codigo Sigla"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_account_account_codigo_divisa
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_codigo_divisa
+msgid "Codigo divisa"
+msgstr "Codigo divisa"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_dc
+msgid "DC"
+msgstr "DC"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_product_template_fecha_precio
+msgid "Fecha Precio"
+msgstr "Fecha Precio"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_forma_de_pago
+msgid "Forma de pago (Importada)"
+msgstr "Forma de pago (Importada)"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_iban
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: talleres_cubells
+#: code:addons/talleres_cubells/models/__init__.py:77
+#, python-format
+msgid "Module loading %s failed: file %s could not be processed:\n"
+" %s"
+msgstr "Module loading %s failed: file %s could not be processed:\n"
+" %s"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_nombre1
+msgid "Nombre 1"
+msgstr "Nombre 1"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_numero1
+msgid "Numero 1"
+msgstr "Numero 1"
+
+#. module: talleres_cubells
+#: model:ir.model,name:talleres_cubells.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: talleres_cubells
+#: model:ir.model,name:talleres_cubells.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: talleres_cubells
+#: selection:account.account,cliente_o_proveedor:0
+msgid "Proveedor"
+msgstr "Proveedor"
+
+#. module: talleres_cubells
+#: model:account.account.type,name:talleres_cubells.tipo_proveedores
+msgid "Proveedores"
+msgstr "Proveedores"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_account_account_sigla_nacion
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_sigla_nacion
+msgid "Sigla Nacion"
+msgstr "Sigla Nacion"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_telefono2
+msgid "Telefono 2"
+msgstr "Telefono 2"
+
+#. module: talleres_cubells
+#: model:ir.model.fields,field_description:talleres_cubells.field_res_partner_telefono3
+msgid "Telefono 3"
+msgstr "Telefono 3"
+
+#. module: talleres_cubells
+#: model:ir.ui.view,arch_db:talleres_cubells.view_partner_property_form_inherit_talleres_cubells
+msgid "e.g. 77472701J"
+msgstr "e.g. 77472701J"
+

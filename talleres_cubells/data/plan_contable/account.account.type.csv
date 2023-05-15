@@ -1,0 +1,3 @@
+id;name;type
+tipo_clientes;Clientes;receivable
+tipo_proveedores;Proveedores;payable

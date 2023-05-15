@@ -1,0 +1,48 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* report_pnt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-17 09:13+0000\n"
+"PO-Revision-Date: 2020-01-17 10:13+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: report_pnt
+#: model:ir.ui.view,arch_db:report_pnt.report_invoice_document
+msgid "<span>ES62 0081 0270 3800 0100 3908</span>"
+msgstr "<span>ES62 0081 0270 3800 0100 3908</span>"
+
+#. module: report_pnt
+#: model:ir.ui.view,arch_db:report_pnt.report_invoice_document
+msgid "<strong>Bank:</strong>"
+msgstr "<strong>Banco:</strong>"
+
+#. module: report_pnt
+#: model:ir.ui.view,arch_db:report_pnt.report_invoice_document
+msgid "<strong>Payment Mode:</strong>"
+msgstr "<strong>Modo de pago:</strong>"
+
+#. module: report_pnt
+#: model:ir.ui.view,arch_db:report_pnt.report_invoice_document
+msgid "Date due:"
+msgstr "Vencimientos:"
+
+#. module: report_pnt
+#: model:ir.ui.view,arch_db:report_pnt.report_invoice_document
+msgid "Disc.(%)"
+msgstr "Desc.(%)"
+
+#. module: report_pnt
+#: model:ir.ui.view,arch_db:report_pnt.report_invoice_document
+msgid "Payment mode:"
+msgstr "Forma de pago:"

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="inh_purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.reports</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="parent_id"/>
+            </field>
+            <xpath expr="//label[@for='date_planned']" position="replace"></xpath>
+            <xpath expr="//sheet/notebook/page[2]/group/group[1]/div" position="replace"></xpath>
+            <field name="date_order" position="after">
+                <label for="date_planned"/>
+                <div>
+                    <field name="date_planned" required="1"
+                           attrs="{'readonly': [('state', 'not in', ('draft', 'sent'))]}"/>
+                    <button name="action_set_date_planned" type="object"
+                            states="draft,sent"
+                            string="Set date to all order lines"
+                            help="This changes the scheduled date of all order lines to the given date"
+                            class="fa fa-calendar o_icon_button oe_edit_only"/>
+                </div>
+                <field name="creator_id" readonly="True"/>
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_purchaseorder_document" inherit_id="purchase.report_purchaseorder_document">
+        <!--<h2 t-if="o.state != 'draft'" position="replace">
+            <h2 t-if="o.state != 'draft'">Purchase Order <span t-field="o.name"/></h2>
+        </h2>
+        <h2 t-if="o.state == 'draft'" position="replace">
+            <h2 t-if="o.state == 'draft'">Purchase Order <span t-field="o.name"/></h2>
+        </h2>-->
+
+        <div t-if="o.date_order" class="col-xs-3" position="replace">
+            <div t-if="o.date_order" class="col-xs-3">
+                <strong>Order Date:</strong>
+                <p t-field-options='{"widget": "date"}' t-field="o.date_order"/>
+            </div>
+        </div>
+
+        <xpath expr="//table[1]//tbody/tr/td[1]" position="replace">
+            <td>
+               <span t-field="line.product_id or line.name"/>
+                <!--<span t-field="line.product_id"/>-->
+            </td>
+        </xpath>
+
+        <xpath expr="//table[1]//thead/tr/th[2]" position="replace">
+            <th style="display:none"><strong>Taxes</strong></th>
+        </xpath>
+
+        <xpath expr="//table[1]//tbody/tr/td[2]" position="replace">
+            <td style="display:none">
+                <span t-esc="', '.join(map(lambda x: x.name, line.taxes_id))"/>
+            </td>
+        </xpath>
+
+        <xpath expr="//table[1]//thead/tr/th[3]" position="replace">
+            <th style="display:none" class="text-center"><strong>Date Req.</strong></th>
+            <th><strong>Nº OT</strong></th>
+            <th><strong>Cost Price</strong></th>
+        </xpath>
+
+        <xpath expr="//table[1]//tbody/tr/td[3]" position="replace">
+            <td style="display:none" class="text-center">
+                <span t-field="line.date_planned"/>
+            </td>
+            <td class="text-center">
+                <span t-field="line.wo_num"/>
+            </td>
+             <td class="text-center">
+                <span t-field="line.price_unit"/>
+            </td>
+        </xpath>
+
+        <!-- numero unidades producto -->
+        <xpath expr="//table[1]//thead/tr/th[1]" position="before">
+            <th><strong>Ud.</strong></th>
+        </xpath>
+
+        <xpath expr="//table[1]//tbody/tr/td[1]" position="before">
+            <td class="text-center">
+                <span t-field="line.product_qty"/>
+            </td>
+        </xpath>
+
+
+        <xpath expr="//div[@class='oe_structure'][last()]" position="after">
+            <div class="row">
+                <div class="col-xs-6">
+                    Realizado por: <span t-field="o.create_uid"/><br/>
+                    Fecha de Entrega: <span t-field-options='{"widget": "date"}' t-field="o.date_planned"/><br/><br/>
+                    Nota: Rogamos realicen un albarán valorado para cada pedido realizado, e indiquen en cada albarán el nº de pedido.
+                </div>
+                <div class="col-xs-4 col-xs-offset-2">
+                    Atentamente,<br/>
+                    R.C.B., S.L.<br/><br/><br/>
+                    Firmado: Alejandro Llobell
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

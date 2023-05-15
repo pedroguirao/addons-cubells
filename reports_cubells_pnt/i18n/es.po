@@ -1,0 +1,178 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* reports_cubells_pnt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-02 07:54+0000\n"
+"PO-Revision-Date: 2017-08-02 09:55+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseorder_document
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid ""
+"<br/>\n"
+"                    Fecha de Entrega:"
+msgstr ""
+"<br/>\n"
+"                    Fecha de Entrega:"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseorder_document
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid ""
+"<br/><br/>\n"
+"                    Nota: Rogamos realicen un albarán valorado para cada pedido realizado, e indiquen en cada albarán el nº de pedido."
+msgstr ""
+"<br/><br/>\n"
+"                    Nota: Rogamos realicen un albarán valorado para cada pedido realizado, e indiquen en cada albarán el nº de pedido."
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_picking
+msgid "<strong>Barcode</strong>"
+msgstr "<strong>Código de barras</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseorder_document
+msgid "<strong>Date Req.</strong>"
+msgstr "<strong>Fecha req.</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid "<strong>Description</strong>"
+msgstr "<strong>Descripción</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_picking
+msgid "<strong>Destination</strong>"
+msgstr "<strong>Destino</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_picking
+msgid "<strong>Lot/Serial Number</strong>"
+msgstr "<strong>Número Lote/Serie</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseorder_document
+msgid "<strong>Nº OT</strong>"
+msgstr "<strong>Nº OT</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseorder_document
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>Fecha orden:</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid "<strong>Our Order Reference:</strong>"
+msgstr "<strong>Ref. de nuestra orden:</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_picking
+msgid "<strong>Product</strong>"
+msgstr "<strong>Producto</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid "<strong>Qty</strong>"
+msgstr "<strong>Cant</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_picking
+msgid "<strong>Quantity</strong>"
+msgstr "<strong>Cantidad</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_picking
+msgid "<strong>Scheduled Date</strong>"
+msgstr "<strong>Fecha planificada</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Dirección de Envío</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_picking
+msgid "<strong>Source</strong>"
+msgstr "<strong>Origen</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_picking
+msgid "<strong>State</strong>"
+msgstr "<strong>Estado</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseorder_document
+msgid "<strong>Taxes</strong>"
+msgstr "<strong>Impuestos</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid "<strong>Your Order Reference</strong>"
+msgstr "<strong>Ref. de su orden</strong>"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseorder_document
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid ""
+"Atentamente,<br/>\n"
+"                    R.C.B., S.L.<br/><br/><br/>\n"
+"                    Firmado: Alejandro Llobell"
+msgstr ""
+"Atentamente,<br/>\n"
+"                    R.C.B., S.L.<br/><br/><br/>\n"
+"                    Firmado: Alejandro Llobell"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_invoice_document
+msgid "Date due:"
+msgstr "Vencimientos:"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_invoice_document
+msgid "Disc.(%)"
+msgstr "Desc.(%)"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_picking
+msgid "INCOMMING DELIVERY:"
+msgstr "ALBARÁN DE ENTREGA:"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_invoice_document
+msgid "Payment mode:"
+msgstr "Forma de pago:"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseorder_document
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: reports_cubells_pnt
+#: model:ir.actions.report.xml,name:reports_cubells_pnt.report_purchase_unrated
+msgid "Purchase Order Unrated"
+msgstr "Pedido sin valorar"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseorder_document
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid "Realizado por:"
+msgstr "Realizado por:"
+
+#. module: reports_cubells_pnt
+#: model:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseunrated_document
+msgid "VAT:"
+msgstr "CIF/NIF:"

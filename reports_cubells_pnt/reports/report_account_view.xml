@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <!--<xpath expr="//p[@t-field='o.date_due']/.." position="attributes">
+            <attribute name="style">display:none</attribute>
+        </xpath>-->
+
+        <th t-if="display_discount" class="text-right" position="replace">
+            <t t-if="any(o.invoice_line_ids.mapped('discount'))">
+                <th t-if="display_discount" class="text-right">Disc.(%)</th>
+            </t>
+            <t t-if="not any(o.invoice_line_ids.mapped('discount'))">
+                <th style="display:none" t-if="display_discount" class="text-right">Disc.(%)</th>
+            </t>
+        </th>
+
+        <td t-if="display_discount" class="text-right" position="replace">
+            <t t-if="any(o.invoice_line_ids.mapped('discount'))">
+                <td t-if="display_discount" class="text-right">
+                    <span t-field="l.discount"/>
+                </td>
+            </t>
+            <t t-if="not any(o.invoice_line_ids.mapped('discount'))">
+                <td style="display:none" t-if="display_discount" class="text-right">
+                    <span t-field="l.discount"/>
+                </td>
+            </t>
+        </td>
+
+        <xpath expr="//td/span[@t-field='l.name']/.." position="replace">
+            <td><span style="display:none" t-field="l.name"/><span t-field="l.product_id or l.name"/></td>
+        </xpath>
+
+        <p t-if="o.payment_term_id" position="attributes">
+            <attribute name="style">display:none</attribute>
+        </p>
+
+        <p t-if="o.fiscal_position_id.note" position="after">
+            <p>Payment mode:</p>
+            <p><span t-field="o.payment_mode_id"/> <span t-field="o.payment_term_id"/></p>
+            <br/>
+            <t t-if="o.type == 'out_invoice'">
+                <p>Date due:</p>
+                <p t-foreach="o.move_id.line_ids.filtered(lambda r: len(r.account_id.code) >= 2 and r.account_id.code[0:2] == '43')" t-as="due">
+                    <p><span t-field="due.date_maturity"/> <span t-field="due.debit"/></p>
+                </p>
+            </t>
+        </p>
+
+    </template>
+
+    <template id="report_invoice_payment_mode" inherit_id="account_payment_partner.report_invoice_payment_mode">
+        <!--<p t-if="o.partner_bank_id" position="attributes">
+            <attribute name="style">display:none</attribute>
+        </p>-->
+    </template>
+</odoo>

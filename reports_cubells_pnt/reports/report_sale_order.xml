@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+
+        <xpath expr="//table//thead//tr//th[6]" position="replace">
+            <th class="text-right">Precio Total</th>
+        </xpath>
+
+        <xpath expr="//table//thead//tr//th[5]" position="replace"/>
+        <xpath expr="//table//thead//tr//th[4]" position="replace"/>
+        <xpath expr="//table//thead//tr//th[3]" position="replace"/>
+        <xpath expr="//table//thead//tr//th[2]" position="replace"/>
+
+        <xpath expr="//table//tbody//tr//td[5]" position="replace"/>
+        <xpath expr="//table//tbody//tr//td[4]" position="replace"/>
+        <xpath expr="//table//tbody//tr//td[3]" position="replace"/>
+        <xpath expr="//table//tbody//tr//td[2]" position="replace"/>
+
+
+        <xpath expr="//table//thead//tr//th[1]" position="replace">
+            <th style="min-width:'300px'">Descripción</th>
+        </xpath>
+
+        <xpath expr="//table//thead//tr//th[2]" position="before">
+            <th class="text-right">Proveedor</th>
+            <th class="text-right">Precio</th>
+            <th class="text-right">Dto.</th>
+            <th class="text-right" style="min-width='100px'">Precio Neto</th>
+        </xpath>
+        <xpath expr="//table[@class='table table-condensed']/tbody[@class='sale_tbody']/t[1]/t[2]/tr[1]/td[1]" position="after">
+            <td class="text-right">
+                <span t-field="l.seller_ids"/>
+            </td>
+
+            <td class="text-right">
+                <span t-field="l.product_cost_price"/>
+            </td>
+            <td class="text-right">
+                <span t-field="l.product_discount_seller"/>
+            </td>
+            <td class="text-right">
+                <span t-field="l.price_unit"/>
+            </td>
+        </xpath>
+
+
+        <xpath expr="//table//thead//tr//th[1]" position="before">
+            <th class="text-right">Ref.</th>
+            <th class="text-right">Ud.</th>
+        </xpath>
+
+        <xpath expr="//table[@class='table table-condensed']/tbody[@class='sale_tbody']/t[1]/t[2]/tr[1]/td[1]" position="before">
+            <td class="text-right">
+                <span t-field="l.product_id.default_code"/>
+            </td>
+            <td class="text-right">
+                <span t-esc="'%.2f'% l.product_uom_qty"/>
+                <span t-field="l.product_uom" groups="product.group_uom"/>
+            </td>
+        </xpath>
+    </template>
+
+    <record id="paperformat_custom_reports" model="report.paperformat">
+        <field name="name">Custom Reports document format</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">50</field>
+        <field name="margin_bottom">35</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">45</field>
+        <field name="dpi">100</field>
+    </record>
+</odoo>
