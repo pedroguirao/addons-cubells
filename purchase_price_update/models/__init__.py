@@ -19,5 +19,5 @@
 #
 ##############################################################################
 from . import product
-from . import account
+#from . import account
 from . import purchase
