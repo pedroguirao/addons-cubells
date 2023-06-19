@@ -9,7 +9,7 @@ class SaleAdvancePaymentInv(models.TransientModel):
         res = super().create_invoices()
         invoices_ids = res['res_id']
         domain = res['domain']
-        invoices = self.env['account.invoice']
+        invoices = self.env['account.move']
         if bool(invoices_ids):
             invoices = invoices.browse(invoices_ids).exists()
         elif not isinstance(domain, str):

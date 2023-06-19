@@ -2,7 +2,7 @@ from odoo import api, fields, models, _
 
 
 class AccountInvoice(models.Model):
-    _inherit = "account.invoice"
+    _inherit = "account.move"
 
     partner_bank_acc_id = fields.Many2one(
         string="Partner bank account",

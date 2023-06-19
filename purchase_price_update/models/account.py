@@ -22,7 +22,7 @@ from odoo import models, api
 
 
 class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+    _inherit = 'account.move'
 
     #@api.multi
     #def action_invoice_open(self):

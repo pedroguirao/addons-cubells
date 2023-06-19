@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <odoo>
     <record id="inh_account_invoice_form" model="ir.ui.view">
-        <field name="name">account.invoice.sale.reports</field>
-        <field name="model">account.invoice</field>
+        <field name="name">account.move.sale.reports</field>
+        <field name="model">account.move</field>
         <field name="inherit_id" ref="account.invoice_form"/>
         <field name="arch" type="xml">
             <field name="partner_id" position="after">
@@ -13,7 +13,7 @@
 
     <record id="inh_account_invoice_form_supplier" model="ir.ui.view">
         <field name="name">account.invoice.supply.reports</field>
-        <field name="model">account.invoice</field>
+        <field name="model">account.move</field>
         <field name="inherit_id" ref="account.invoice_supplier_form"/>
         <field name="arch" type="xml">
             <field name="partner_id" position="after">

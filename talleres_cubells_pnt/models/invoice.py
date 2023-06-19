@@ -4,7 +4,7 @@ from datetime import timedelta
 
 
 class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+    _inherit = 'account.move'
 
     pnt_collaborator_id = fields.Many2one(
         comodel_name="res.partner",
