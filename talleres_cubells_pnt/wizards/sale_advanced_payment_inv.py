@@ -4,7 +4,7 @@ from odoo import api, fields, models, _
 class SaleAdvancePaymentInv(models.TransientModel):
     _inherit = "sale.advance.payment.inv"
 
-    @api.multi
+#    @api.multi
     def create_invoices(self):
         res = super().create_invoices()
         invoices_ids = res['res_id']
