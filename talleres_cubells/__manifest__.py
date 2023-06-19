@@ -28,13 +28,13 @@
     "website": "http://www.braintec-group.com/",
     "depends": [
         "base",
-        "crm",
-        "sale",
-        "purchase",
-        "account",
-        "stock",
-        "account_accountant",
-        "l10n_es"
+#        "crm",
+#        "sale",
+#        "purchase",
+#        "account",
+#        "stock",
+#        "account_accountant",
+#        "l10n_es"
     ],
     "data": [
         # unfortunately CSV doesn't work with noupdate thus we use a post_init hook
@@ -43,17 +43,17 @@
         # 'data/clientes/res.partner.csv',
         # 'data/articulos/product.template.csv',
 
-        'views/account_account_views.xml',
-        'views/res_partner_views.xml',
-        'views/product_template_views.xml',
+ #       'views/account_account_views.xml',
+ #       'views/res_partner_views.xml',
+ #       'views/product_template_views.xml',
     ],
     "demo": [
     ],
     "qweb": [
     ],
-    'pre_init_hook': 'pre_init_hook',
-    'post_init_hook': 'post_init_hook',
-    'uninstall_hook': 'uninstall_hook',
+ #   'pre_init_hook': 'pre_init_hook',
+ #   'post_init_hook': 'post_init_hook',
+ #   'uninstall_hook': 'uninstall_hook',
     "active": False,
     "installable": True,
 }

@@ -14,13 +14,14 @@
     'depends': ['account_payment_partner',
                 'delivery',
                 'talleres_cubells_pnt'],
-    'data': ['reports/templates.xml',
-             'reports/report_stock_view.xml',
-             'reports/report_delivery_view.xml',
-             # 'reports/report_account_view.xml',
-             'reports/report_sale_order.xml',
-             'reports/report_picking.xml',
-             'reports/report_purchase_view.xml',
-             'reports/report_purchase_unrated_view.xml'
-             ]
+    'data': [
+        #'reports/templates.xml',
+        #        'reports/report_stock_view.xml',
+        #'reports/report_delivery_view.xml',
+        # 'reports/report_account_view.xml', (este ya estaba comentado antes de la migración)
+        #'reports/report_sale_order.xml',
+        #'reports/report_picking.xml',
+        #'reports/report_purchase_view.xml',
+        #'reports/report_purchase_unrated_view.xml'
+    ]
 }
