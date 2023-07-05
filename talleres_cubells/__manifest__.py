@@ -28,13 +28,13 @@
     "website": "http://www.braintec-group.com/",
     "depends": [
         "base",
-#        "crm",
-#        "sale",
-#        "purchase",
-#        "account",
-#        "stock",
-#        "account_accountant",
-#        "l10n_es"
+        "crm",
+        "sale",
+        "purchase",
+        "account",
+        "stock",
+        "account_accountant",
+        "l10n_es"
     ],
     "data": [
         # unfortunately CSV doesn't work with noupdate thus we use a post_init hook
