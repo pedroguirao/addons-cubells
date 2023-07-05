@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from odoo import api, fields, models
+from odoo import fields, models, api
 
 
 class ProductTemplateExt(models.Model):
