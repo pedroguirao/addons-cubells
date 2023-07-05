@@ -19,19 +19,19 @@
 #
 ##############################################################################
 
-from io import StringIO
-import csv
-import logging
-import os.path
+#from io import StringIO
+#import csv
+#import logging
+#import os.path
 
-import odoo
-import odoo.release
-from odoo.tools.misc import file_open, unquote, ustr, SKIPPED_ELEMENT_TYPES
-from odoo.tools.translate import _
-from odoo import SUPERUSER_ID
+#import odoo
+#import odoo.release
+#from odoo.tools.misc import file_open, unquote, ustr, SKIPPED_ELEMENT_TYPES
+#from odoo.tools.translate import _
+#from odoo import SUPERUSER_ID
 
-_logger = logging.getLogger(__name__)
+#_logger = logging.getLogger(__name__)
 
-#from . import account_account_ext
+from . import account_account_ext
 from . import res_partner_ext
 from . import product_template_ext
