@@ -32,6 +32,6 @@ from odoo import SUPERUSER_ID
 
 _logger = logging.getLogger(__name__)
 
-from . import account_account_ext
+#from . import account_account_ext
 from . import res_partner_ext
 from . import product_template_ext
