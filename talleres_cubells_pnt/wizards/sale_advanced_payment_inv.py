@@ -16,7 +16,7 @@ class SaleAdvancePaymentInv(models.TransientModel):
             invoices = invoices.search(domain).exists()
 
         for invoice in invoices:
-            if invoice.type not in ['out_invoice', 'out_refund']:
+            if invoice.move_type not in ['out_invoice', 'out_refund']:
                 continue
             sales = invoice.invoice_line_ids.mapped('sale_line_ids.order_id')
             if bool(sales):
