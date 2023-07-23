@@ -34,7 +34,7 @@
         "account",
         "stock",
         "account_accountant",
-        "l10n_es"
+        "l10n_es",
     ],
     "data": [
         # unfortunately CSV doesn't work with noupdate thus we use a post_init hook
@@ -43,9 +43,9 @@
         # 'data/clientes/res.partner.csv',
         # 'data/articulos/product.template.csv',
 
-        'views/account_account_views.xml',
-        'views/res_partner_views.xml',
-        'views/product_template_views.xml',
+#        'views/account_account_views.xml',
+#        'views/res_partner_views.xml',
+#        'views/product_template_views.xml',
     ],
     "demo": [
     ],
