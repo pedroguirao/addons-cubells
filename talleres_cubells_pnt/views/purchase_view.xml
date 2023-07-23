@@ -28,6 +28,8 @@
     <record id="view_stock_move_pnt_tree" model="ir.ui.view">
         <field name="name">stock.move.pnt.tree</field>
         <field name="model">stock.move</field>
+        <field name="type">tree</field>
+        <field name="priority">90</field>
         <field name="inherit_id" ref="stock.view_move_tree_receipt_picking"/>
         <field name="arch" type="xml">
             <!--
@@ -53,6 +55,8 @@
     <record id="view_stock_move_pnt_search" model="ir.ui.view">
         <field name="name">stock.move.pnt.search</field>
         <field name="model">stock.move</field>
+        <field name="type">search</field>
+        <field name="priority">90</field>
         <field name="inherit_id" ref="stock.view_move_search"/>
         <field name="arch" type="xml">
             <!--
