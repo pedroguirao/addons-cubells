@@ -7,6 +7,7 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
+                <!--
                 <xpath expr="//button[@name='print_quotation']" position="after">
                     <button name="calc_price_sale_order"
                             type="object"
@@ -37,6 +38,7 @@
                 <xpath expr="//field[@name='partner_id']/parent::group" position="inside">
                     <field name="pnt_collaborator_id" options="{'no_create': True}"/>
                 </xpath>
+                -->
             </field>
         </record>
 
@@ -45,9 +47,11 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_tree"/>
             <field name="arch" type="xml">
+                <!--
                 <xpath expr="//field[@name='name']" position="after">
                         <field name="client_order_ref"/>
                 </xpath>
+                -->
             </field>
         </record>
 
@@ -56,9 +60,11 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_quotation_tree"/>
             <field name="arch" type="xml">
+                <!--
                 <xpath expr="//field[@name='name']" position="after">
                         <field name="client_order_ref"/>
                 </xpath>
+                -->
             </field>
         </record>
 
@@ -67,12 +73,14 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_sales_order_filter"/>
             <field name="arch" type="xml">
+                <!--
                 <xpath expr="//field[@name='name']" position="after">
                         <field name="client_order_ref"/>
                 </xpath>
                  <xpath expr="//filter[@name='customer']" position="before">
                     <filter name="client_order_ref" string="Client Ref" context="{'group_by':'client_order_ref'}"/>
                 </xpath>
+                -->
             </field>
         </record>
     </data>

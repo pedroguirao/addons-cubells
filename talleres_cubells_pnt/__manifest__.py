@@ -20,13 +20,13 @@
     ],
     'data': [
             'security/ir.model.access.csv',
-            #'views/templates.xml',
-            #'views/purchase_view.xml',
-            #'views/stock_view.xml',
-            #'views/sale_order.xml',
-            #'views/maintenance.xml',
-            #'views/model.xml',
-            #'views/fuel.xml',
-            #'views/invoice.xml',
+            'views/templates.xml',
+            'views/purchase_view.xml',
+            'views/stock_view.xml',
+            'views/sale_order.xml',
+            'views/maintenance.xml',
+            'views/model.xml',
+            'views/fuel.xml',
+            'views/invoice.xml',
     ]
 }

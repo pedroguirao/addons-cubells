@@ -7,12 +7,14 @@
             <field name="model">account.account</field>
             <field name="inherit_id" ref="account.view_account_form"/>
             <field name="arch" type="xml">
+                <!--
                 <field name="name" position="after">
                     <field name="cliente_o_proveedor" />
                     <field name="sigla_nacion" />
                     <field name="cif_dni" />
                     <field name="codigo_divisa" />
                 </field>
+                -->
             </field>
         </record>
 
@@ -21,11 +23,13 @@
             <field name="model">account.account</field>
             <field name="inherit_id" ref="account.view_account_list"/>
             <field name="arch" type="xml">
+                <!--
                 <field name="name" position="after">
                     <field name="cliente_o_proveedor" />
                     <field name="sigla_nacion" />
                     <field name="cif_dni" />
                 </field>
+                -->
             </field>
         </record>
 

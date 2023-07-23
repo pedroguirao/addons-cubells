@@ -5,6 +5,7 @@
         <field name="name">pnt.maintenance.equipment.model.form</field>
         <field name="model">pnt.maintenance.equipment.model</field>
         <field name="arch" type="xml">
+            <!--
             <form string="Maintenance Equipment Model">
                 <sheet>
                     <group>
@@ -14,6 +15,7 @@
                     </group>
                 </sheet>
             </form>
+            -->
         </field>
     </record>
 
@@ -21,9 +23,11 @@
         <field name="name">pnt.maintenance.equipment.model.tree</field>
         <field name="model">pnt.maintenance.equipment.model</field>
         <field name="arch" type="xml">
+            <!--
             <tree string="Maintenance Equipment Model">
                 <field name="name"/>
             </tree>
+            -->
         </field>
     </record>
 
@@ -31,9 +35,11 @@
         <field name="name">pnt.maintenance.equipment.model.search</field>
         <field name="model">pnt.maintenance.equipment.model</field>
         <field name="arch" type="xml">
+            <!--
             <search string="Maintenance Equipment Model">
                 <field name="name"/>
             </search>
+            -->
         </field>
     </record>
 

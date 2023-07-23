@@ -43,9 +43,9 @@
         # 'data/clientes/res.partner.csv',
         # 'data/articulos/product.template.csv',
 
- #       'views/account_account_views.xml',
- #       'views/res_partner_views.xml',
- #       'views/product_template_views.xml',
+        'views/account_account_views.xml',
+        'views/res_partner_views.xml',
+        'views/product_template_views.xml',
     ],
     "demo": [
     ],

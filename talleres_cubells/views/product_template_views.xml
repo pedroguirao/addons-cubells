@@ -7,6 +7,7 @@
         <field name="model">product.template</field>
             <field name="inherit_id" ref="product.product_template_form_view"/>
             <field name="arch" type="xml">
+                <!--
                 <field name="type" position="after">
                     <field name="codigo_empresa" />
                 </field>
@@ -14,6 +15,7 @@
                     <field name="descuento_compras" />
                     <field name="fecha_precio" />
                 </field>
+                -->
             </field>
         </record>
 
