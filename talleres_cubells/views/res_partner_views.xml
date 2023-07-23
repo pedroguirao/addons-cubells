@@ -1,85 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
 
-        <record id="view_partner_form_inherit_talleres_cubells" model="ir.ui.view">
-            <field name="name">res.partner.form.inherit</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="arch" type="xml">
-                <!--
-                <xpath expr="//field[@name='vat']" position="before">
-                    <label for="cif_dni"/>
-                    <div name="cif_dni_info" class="o_row">
-                        <field name="cif_dni" placeholder="e.g. 77472701J"/>
-                    </div>
-                </xpath>
-                <xpath expr="//field[@name='vat']" position="attributes">
-                    <attribute name="string">CIF Europeo</attribute>
-                </xpath>
-
-                <field name="type" position="after">
-                    <field name="nombre1" />
-                </field>
-
-                <field name="phone" position="before">
-                    <field name="actividad" />
-                    <field name="cargo" />
-                </field>
-
-                <field name="phone" position="after">
-                    <field name="telefono2" widget="phone"/>
-                    <field name="telefono3" widget="phone"/>
-                </field>
-
-                <div class="o_address_format" position="inside">
-                    <field name="sigla_nacion"
-                           attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+    <record id="view_partner_form_inherit_talleres_cubells" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!--
+            <xpath expr="//field[@name='vat']" position="before">
+                <label for="cif_dni"/>
+                <div name="cif_dni_info" class="o_row">
+                    <field name="cif_dni" placeholder="e.g. 77472701J"/>
                 </div>
-                <field name="street2" position="after">
-                    <field name="numero1" class="o_address_street"/>
-                </field>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="string">CIF Europeo</attribute>
+            </xpath>
 
-                <page name="internal_notes" position="inside">
-                    <group name="grupo_codigos">
-                        <field name="codigo_definicion" />
-                        <field name="codigo_condiciones" />
-                        <field name="codigo_sigla" />
-                    </group>
-                </page>
+            <field name="type" position="after">
+                <field name="nombre1" />
+            </field>
+
+            <field name="phone" position="before">
+                <field name="actividad" />
+                <field name="cargo" />
+            </field>
+
+            <field name="phone" position="after">
+                <field name="telefono2" widget="phone"/>
+                <field name="telefono3" widget="phone"/>
+            </field>
+
+            <div class="o_address_format" position="inside">
+                <field name="sigla_nacion"
+                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+            </div>
+            <field name="street2" position="after">
+                <field name="numero1" class="o_address_street"/>
+            </field>
+
+            <page name="internal_notes" position="inside">
+                <group name="grupo_codigos">
+                    <field name="codigo_definicion" />
+                    <field name="codigo_condiciones" />
+                    <field name="codigo_sigla" />
+                </group>
+            </page>
 -->
-            </field>
-        </record>
+        </field>
+    </record>
 
-        <record id="partner_view_buttons_inherit_talleres_cubells" model="ir.ui.view">
-            <field name="name">partner.view.buttons.inherit</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="account.partner_view_buttons" />
-            <field name="arch" type="xml">
-                <!--
-                <field name="currency_id" position="after">
-                    <field name="dc"/>
-                    <field name="ccc"/>
-                    <field name="iban"/>
-                </field>
-                -->
+    <record id="partner_view_buttons_inherit_talleres_cubells" model="ir.ui.view">
+        <field name="name">partner.view.buttons.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.partner_view_buttons" />
+        <field name="arch" type="xml">
+            <!--
+            <field name="currency_id" position="after">
+                <field name="dc"/>
+                <field name="ccc"/>
+                <field name="iban"/>
             </field>
-        </record>
+            -->
+        </field>
+    </record>
 
-        <record id="view_partner_property_form_inherit_talleres_cubells" model="ir.ui.view">
-            <field name="name">res.partner.from.vat.inherit</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base_vat.view_partner_form"/>
-            <field name="arch" type="xml">
-                <!--
-                <field name="property_supplier_payment_term_id" position="after">
-                    <field name="forma_de_pago"/>
-                    <field name="codigo_banco"/>
-                    <field name="codigo_agencia"/>
-                </field>
-                -->
+    <record id="view_partner_property_form_inherit_talleres_cubells" model="ir.ui.view">
+        <field name="name">res.partner.from.vat.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base_vat.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!--
+            <field name="property_supplier_payment_term_id" position="after">
+                <field name="forma_de_pago"/>
+                <field name="codigo_banco"/>
+                <field name="codigo_agencia"/>
             </field>
-        </record>
+            -->
+        </field>
+    </record>
 
-    </data>
 </odoo>
