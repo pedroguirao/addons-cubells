@@ -6,14 +6,12 @@
         <field name="model">maintenance.equipment</field>
         <field name="inherit_id" ref="maintenance.hr_equipment_view_search"/>
         <field name="arch" type="xml">
-            <!--
             <xpath expr="//field[@name='owner_user_id']" position="after">
                 <field name="pnt_model_id"/>
                 <field name="pnt_partner_id"/>
                 <field name="pnt_state_id"/>
                 <field name="pnt_fuel_id"/>
             </xpath>
-            -->
         </field>
     </record>
 
@@ -22,7 +20,6 @@
         <field name="model">maintenance.equipment</field>
         <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
         <field name="arch" type="xml">
-            <!--
             <xpath expr="//field[@name='category_id']" position="before">
                 <field name="pnt_ot_num"/>
             </xpath>
@@ -40,15 +37,10 @@
                 <field name="pnt_burner"/>
                 <field name="pnt_legalized"/>
             </xpath>
-            <xpath expr="//field[@name='warranty']" position="after">
-                <field name="pnt_various1"/>
-                <field name="pnt_various2"/>
-                <field name="pnt_various3"/>
-            </xpath>
+
             <xpath expr="//field[@name='next_action_date']" position="before">
                 <field name="pnt_maintenance_year"/>
             </xpath>
-            -->
         </field>
     </record>
 

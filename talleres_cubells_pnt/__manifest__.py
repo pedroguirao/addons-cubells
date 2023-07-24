@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Personalizaciones para Talleres Cubells',
-    'version': '11.0.1.0.0',
+    'version': '14.0.1.0.0',
     'summary': 'Personalizaciones',
     'author': 'Punt Sistemes S.L.U.',
     'contributors': ['Isaac Gallart <igallart@puntsistemes.es>'],
@@ -14,6 +14,7 @@
     'depends': [
         'purchase',
         'sale',
+        'stock',
         'account',
         'maintenance',
         'hr_maintenance',
@@ -27,6 +28,6 @@
             'views/maintenance.xml',
             'views/model.xml',
             'views/fuel.xml',
-            'views/invoice.xml',
+            #'views/invoice.xml',
     ]
 }

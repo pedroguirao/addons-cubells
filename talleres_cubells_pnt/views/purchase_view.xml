@@ -40,7 +40,7 @@
                     <field name="quantity" string="Cant."/>
                     <field name="price_unit" string="Precio Uni."/>
                     <field name="date_price" string="Date Price"/>
-                    <field name="discount" string="Descuento"/>
+                    <!--<field name="discount" string="Descuento"/>-->
                     <field name="subtotal"></field>
 
                 </xpath>
