@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 from odoo import models, api, fields
 from datetime import timedelta
 
@@ -28,39 +28,38 @@ class SaleOrderLine(models.Model):
     #            ('id', 'in', self.product_id.seller_ids.mapped('name').ids)]
     #        return {'domain': {'seller_ids': domain_seller}}
 
-    #@api.onchange('seller_ids')
-    #def _onchange_seller_ids(self):
-    #    discount_seller = 0
+    @api.onchange('seller_ids')
+    def _onchange_seller_ids(self):
+        discount_seller = 0
+        product_price = self.env['product.supplierinfo'].search(
+            [
+                ('product_tmpl_id', '=', self.product_id.product_tmpl_id.id),
+                ('name', '=', self.seller_ids.id),
+                ('date_start', '<=', fields.Datetime.now()),
+                '|',
+                ('date_end', '>=', fields.Datetime.now()),
+                ('date_end', '=', False),
+            ]
+        )
 
-    #    product_price = self.env['product.supplierinfo'].search(
-    #        [
-    #            ('product_tmpl_id', '=', self.product_id.product_tmpl_id.id),
-    #            ('name', '=', self.seller_ids.id),
-    #            ('date_start', '<=', fields.Datetime.now()),
-    #            '|',
-    #            ('date_end', '>=', fields.Datetime.now()),
-    #            ('date_end', '=', False),
-    #        ]
-    #    )
+        self.product_cost_price = product_price.price
+        self.product_discount_seller = product_price.discount
+        discount_seller = self.product_cost_price * (
+                product_price.discount / 100)
+        self.product_net_cost_price = self.product_cost_price - discount_seller
 
-    #    self.product_cost_price = product_price.price
-    #    self.product_discount_seller = product_price.discount
-    #    discount_seller = self.product_cost_price * (
-    #            product_price.discount / 100)
-    #    self.product_net_cost_price = self.product_cost_price - discount_seller
+        self.price_unit = self.product_net_cost_price
+        if self.product_margin_price > 0:
+            self.calcula_coste_product()
 
-    #    self.price_unit = self.product_net_cost_price
-    #    if self.product_margin_price > 0:
-    #        self.calcula_coste_product()
+    @api.onchange('product_margin_price')
+    def _onchange_product_margin_price(self):
+        if self.seller_ids:
+            self.calcula_coste_product()
 
-    #@api.onchange('product_margin_price')
-    #def _onchange_product_margin_price(self):
-    #    if self.seller_ids:
-    #        self.calcula_coste_product()
-
-    #def calcula_coste_product(self):
-    #    margin = self.product_net_cost_price * (self.product_margin_price / 100)
-    #    self.price_unit = self.product_net_cost_price + margin
+    def calcula_coste_product(self):
+        margin = self.product_net_cost_price * (self.product_margin_price / 100)
+        self.price_unit = self.product_net_cost_price + margin
 
 
 class SaleOrder(models.Model):
