@@ -79,45 +79,45 @@ class SaleOrder(models.Model):
     #        record.sequence = i
     #        i += 1
 
-    #def calc_price_sale_order(self):
-    #    discount_seller = 0
+    def calc_price_sale_order(self):
+        discount_seller = 0
 
-    #    order_lines = self.env['sale.order.line'].search([
-    #        ('order_id', '=', self.id)
-    #    ])
+        order_lines = self.env['sale.order.line'].search([
+            ('order_id', '=', self.id)
+        ])
 
-    #    for record in order_lines:
+        for record in order_lines:
 
-    #        product_price = self.env['product.supplierinfo'].search(
-    #            [
-    #                ('product_tmpl_id', '=',
-    #                 record.product_id.product_tmpl_id.id),
-    #                ('name', '=', record.seller_ids.id),
-    #                ('date_start', '<=', fields.Datetime.now()),
-    #                '|',
-    #                ('date_end', '>=', fields.Datetime.now()),
-    #                ('date_end', '=', False),
-    #            ], limit=1
-    #        )
-    #        if product_price:
-    #            record.product_cost_price = product_price.price
-    #            record.product_discount_seller = product_price.discount
+            product_price = self.env['product.supplierinfo'].search(
+                [
+                    ('product_tmpl_id', '=',
+                     record.product_id.product_tmpl_id.id),
+                    ('name', '=', record.seller_ids.id),
+                    ('date_start', '<=', fields.Datetime.now()),
+                    '|',
+                    ('date_end', '>=', fields.Datetime.now()),
+                    ('date_end', '=', False),
+                ], limit=1
+            )
+            if product_price:
+                record.product_cost_price = product_price.price
+                record.product_discount_seller = product_price.discount
                 ########## Precomentado antes de migrar #########
                 # if fields.Datetime.now() >= product_price.date_start \
                 #        and (fields.Datetime.now() <= product_price.date_end or not product_price.date_end) \
                 #        and product_price.discount:
 
-    #            discount_seller = record.product_cost_price * (
-    #                    product_price.discount / 100)
-    #            record.product_net_cost_price = record.product_cost_price - discount_seller
-    #            record.price_unit = record.product_net_cost_price
+                discount_seller = record.product_cost_price * (
+                        product_price.discount / 100)
+                record.product_net_cost_price = record.product_cost_price - discount_seller
+                record.price_unit = record.product_net_cost_price
 
-    #            if record.product_margin_price > 0:
-    #                record.calcula_coste_product()
+                if record.product_margin_price > 0:
+                    record.calcula_coste_product()
 
-    #            margin = record.product_net_cost_price * (
-    #                    record.product_margin_price / 100)
-    #            record.price_unit = record.product_net_cost_price + margin
+                margin = record.product_net_cost_price * (
+                        record.product_margin_price / 100)
+                record.price_unit = record.product_net_cost_price + margin
 
     #@api.multi
     #def order_lines_layouted(self):

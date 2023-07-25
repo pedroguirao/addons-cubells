@@ -7,6 +7,19 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
 
+            <xpath expr="//button[@name='action_quotation_send']" position="after">
+                <button name="calc_price_sale_order"
+                        type="object"
+                        state="draft"
+                        string="Recalcular Presupuesto"
+                        class="btn-primary"/>
+                <!--<button name="pnt_sort_order_line"
+                        type="object"
+                        state="draft"
+                        string="Sort Lines"
+                        class="btn-primary"/>-->
+            </xpath>
+
 
             <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
                 <field name="seller_ids" context="{'origin':'sale_order', 'default_product' : product_id}"/>
@@ -34,7 +47,7 @@
         <field name="inherit_id" ref="sale.view_order_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
-                    <field name="client_order_ref"/>
+                <field name="client_order_ref"/>
             </xpath>
         </field>
     </record>
@@ -45,7 +58,7 @@
         <field name="inherit_id" ref="sale.view_quotation_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
-                    <field name="client_order_ref"/>
+                <field name="client_order_ref"/>
             </xpath>
         </field>
     </record>
@@ -56,9 +69,9 @@
         <field name="inherit_id" ref="sale.view_sales_order_filter"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
-                    <field name="client_order_ref"/>
+                <field name="client_order_ref"/>
             </xpath>
-             <xpath expr="//filter[@name='customer']" position="before">
+            <xpath expr="//filter[@name='customer']" position="before">
                 <filter name="client_order_ref" string="Client Ref" context="{'group_by':'client_order_ref'}"/>
             </xpath>
         </field>

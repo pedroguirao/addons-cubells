@@ -60,11 +60,11 @@ class StockMove(models.Model):
         related="purchase_line_id.price_unit",
         readonly=True,
     )
-    #discount = fields.Float(
-    #    string='Discount',
-    #    related="purchase_line_id.discount",
-    #    readonly=True,
-    #)
+    discount = fields.Float(
+        string='Discount',
+        related="purchase_line_id.discount",
+        readonly=True,
+    )
     subtotal = fields.Float(
         string='Subtotal',
         compute='_compute_subtotal_line'
