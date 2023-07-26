@@ -36,7 +36,7 @@ class AccountMove(models.Model):
                     psi.write({
                         'discount': l.discount,
                         'price': l.price_unit,
-                        'date_start': self.date_invoice
+                        'date_start': self.invoice_date
                     })
                 else:
                     psi_obj.create({
