@@ -26,7 +26,7 @@ class AccountMove(models.Model):
 
     def action_post(self):
         res = super(AccountMove, self).action_post()
-        if self.type in ['in_invoice', 'in_refund']:
+        if self.move_type in ['in_invoice', 'in_refund']:
             psi_obj = self.env['product.supplierinfo']
             for l in self.invoice_line_ids:
                 psi = psi_obj.search(
