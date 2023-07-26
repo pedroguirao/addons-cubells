@@ -24,13 +24,13 @@
     "version": '1.0',
     "depends": [
         'purchase_discount',
-        'account'
+        'account',
     ],
     "author": "Aselcis consulting",
     "category": 'Account',
     "website": "https://www.aselcis.com",
     "description": """
-        Add custom reports 
+        Update supplierinfo from purchases and incoming invoices 
     """,
     "data": [
         'views/purchase_order_view.xml',
