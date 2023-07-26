@@ -2,7 +2,7 @@
 <odoo>
 
     <!-- SALE Form -->
-    <record id="sale_order_form" model="ir.ui.view">
+    <record id="sale_order_pnt_inh_form" model="ir.ui.view">
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
@@ -42,7 +42,7 @@
     </record>
 
     <!-- SALE Tree -->
-    <record id="view_order_tree" model="ir.ui.view">
+    <record id="view_order_pnt_inh_tree" model="ir.ui.view">
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_tree"/>
         <field name="arch" type="xml">
@@ -53,7 +53,7 @@
     </record>
 
     <!-- QUOTATION Tree -->
-    <record id="view_quotation_tree" model="ir.ui.view">
+    <record id="view_quotation_pnt_inh_tree" model="ir.ui.view">
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_quotation_tree"/>
         <field name="arch" type="xml">
@@ -64,7 +64,7 @@
     </record>
 
     <!-- SALE Search -->
-   <!-- <record id="view_sales_order_filter" model="ir.ui.view">
+    <record id="view_sales_order_pnt_inh_filter" model="ir.ui.view">
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_sales_order_filter"/>
         <field name="arch" type="xml">
@@ -75,6 +75,6 @@
                 <filter name="client_order_ref" string="Client Ref" context="{'group_by':'client_order_ref'}"/>
             </xpath>
         </field>
-    </record>-->
+    </record>
 
 </odoo>
