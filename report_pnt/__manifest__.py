@@ -9,7 +9,7 @@
     "maintainers": ["igallart"],
     "license": "AGPL-3",
     "application": False,
-    "installable": True,
+    "installable": False,
     "depends": [
         "account_payment_partner",
         "sale",

@@ -17,6 +17,6 @@
         #'views/invoice_view.xml',
         #"views/account_journal_views.xml",
     ],
-    "installable": True,
+    "installable": False,
     "auto_install": False,
 }
