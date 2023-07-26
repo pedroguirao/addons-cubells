@@ -72,7 +72,8 @@ class SaleOrder(models.Model):
         domain="[('is_company','=',1)]",
     )
 
-    #def pnt_sort_order_line(self):
+    def pnt_sort_order_line(self):
+        return True
     #    i = 1
     #    for record in sorted(self.order_line, key=lambda x: (
     #            x.layout_category_id.sequence, x.name)):
@@ -80,6 +81,7 @@ class SaleOrder(models.Model):
     #        i += 1
 
     def calc_price_sale_order(self):
+        return True
         discount_seller = 0
 
         order_lines = self.env['sale.order.line'].search([
@@ -119,8 +121,8 @@ class SaleOrder(models.Model):
                         record.product_margin_price / 100)
                 record.price_unit = record.product_net_cost_price + margin
 
-    #@api.multi
-    #def order_lines_layouted(self):
+    def order_lines_layouted(self):
+        return True
     #    report_pages = super(SaleOrder, self).order_lines_layouted()
     #    new_pages = []
     #    cont = 0
@@ -132,8 +134,8 @@ class SaleOrder(models.Model):
     #        new_pages.append(pages)
     #    return new_pages
 
-    #@api.multi
-    #def picking_lines_layouted(self):
+    def picking_lines_layouted(self):
+        return True
     #    report_pages = super(SaleOrder, self).order_lines_layouted()
     #    new_pages = []
     #    cont = 0
