@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Personalizaciones para Talleres Cubells',
-    'version': '14.0.1.0.0',
+    'version': '16.0.1.0.1',
     'summary': 'Personalizaciones',
     'author': 'Punt Sistemes S.L.U.',
     'contributors': ['Isaac Gallart <igallart@puntsistemes.es>'],

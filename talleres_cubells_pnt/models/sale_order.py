@@ -16,7 +16,7 @@ class SaleOrderLine(models.Model):
 
     product_cost_price = fields.Float(string='Precio Coste')
     product_net_cost_price = fields.Float(string='Precio Coste Neto',
-                                          detault=0.0)
+                                          default=0.0)
     product_discount_seller = fields.Float(string='Descuento Proveedor')
     product_margin_price = fields.Float(string='Margen')
 
