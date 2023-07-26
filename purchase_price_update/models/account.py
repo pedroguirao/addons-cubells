@@ -21,7 +21,7 @@
 from odoo import models, api
 
 
-class AccountInvoice(models.Model):
+class AccountMove(models.Model):
     _inherit = 'account.move'
 
     def action_post(self):
