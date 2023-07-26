@@ -24,7 +24,6 @@ from odoo import models, api
 class AccountInvoice(models.Model):
     _inherit = 'account.move'
 
-    #@api.multi
     #def action_invoice_open(self):
     #    res = super(AccountInvoice, self).action_invoice_open()
     #    if self.type in ['in_invoice', 'in_refund']:

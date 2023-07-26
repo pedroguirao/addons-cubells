@@ -26,28 +26,27 @@ from odoo import models, api, fields
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
-    #@api.multi
-    #def button_confirm(self):
-    #    res = super(PurchaseOrder, self).button_confirm()
-    #    psi_obj = self.env['product.supplierinfo']
-    #    for l in self.order_line:
-    #        psi = psi_obj.search(
-    #            [('product_tmpl_id', '=', l.product_id.product_tmpl_id.id), ('name', '=', self.partner_id.id)], limit=1)
-    #        if psi:
-    #            psi.write({
-    #                'discount': l.discount,
-    #                'price': l.price_unit,
-    #                'date_start': l.date_price
-    #            })
-    #        else:
-    #            psi_obj.create({
-    #                'name': self.partner_id.id,
-    #                'product_tmpl_id': l.product_id.product_tmpl_id.id,
-    #                'discount': l.discount,
-    #                'price': l.price_unit,
-    #                'date_start': l.date_price
-    #            })
-    #    return res
+    def button_confirm(self):
+        res = super(PurchaseOrder, self).button_confirm()
+        psi_obj = self.env['product.supplierinfo']
+        for l in self.order_line:
+            psi = psi_obj.search(
+                [('product_tmpl_id', '=', l.product_id.product_tmpl_id.id), ('name', '=', self.partner_id.id)], limit=1)
+            if psi:
+                psi.write({
+                    'discount': l.discount,
+                    'price': l.price_unit,
+                    'date_start': l.date_price
+                })
+            else:
+                psi_obj.create({
+                    'name': self.partner_id.id,
+                    'product_tmpl_id': l.product_id.product_tmpl_id.id,
+                    'discount': l.discount,
+                    'price': l.price_unit,
+                    'date_start': l.date_price
+                })
+        return res
 
 
 class PurchaseOrderLine(models.Model):
@@ -55,17 +54,17 @@ class PurchaseOrderLine(models.Model):
 
     date_price = fields.Date('Date price', default=datetime.now().date())
 
-    #@api.onchange('product_qty', 'product_uom')
-    #def _onchange_quantity(self):
-    #    res = super(PurchaseOrderLine, self)._onchange_quantity()
-    #    if not self.product_id:
-    #        return
+    @api.onchange('product_qty', 'product_uom')
+    def _onchange_quantity(self):
+        res = super(PurchaseOrderLine, self)._onchange_quantity()
+        if not self.product_id:
+            return
 
-    #    seller = self.product_id._select_seller(
-    #        partner_id=self.partner_id,
-    #        quantity=self.product_qty,
-    #        date=self.order_id.date_order and self.order_id.date_order[:10],
-    #        uom_id=self.product_uom)
-    #    if seller:
-    #        self.discount = seller.discount
-    #    return res
+        seller = self.product_id._select_seller(
+            partner_id=self.partner_id,
+            quantity=self.product_qty,
+            date=self.order_id.date_order and self.order_id.date_order[:10],
+            uom_id=self.product_uom)
+        if seller:
+            self.discount = seller.discount
+        return res

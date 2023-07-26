@@ -30,8 +30,8 @@
         Add custom reports 
     """,
     "data": [
-        #'views/purchase_order_view.xml',
-        #'views/product_supplierinfo_view.xml',
+        'views/purchase_order_view.xml',
+        'views/product_supplierinfo_view.xml',
     ],
     "demo": [],
     "installable": True,
