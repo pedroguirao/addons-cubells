@@ -24,26 +24,26 @@ from odoo import models, api
 class AccountInvoice(models.Model):
     _inherit = 'account.move'
 
-    #def action_invoice_open(self):
-    #    res = super(AccountInvoice, self).action_invoice_open()
-    #    if self.type in ['in_invoice', 'in_refund']:
-    #        psi_obj = self.env['product.supplierinfo']
-    #        for l in self.invoice_line_ids:
-    #            psi = psi_obj.search(
-    #                [('product_tmpl_id', '=', l.product_id.product_tmpl_id.id), ('name', '=', self.partner_id.id)],
-    #                limit=1)
-    #            if psi:
-    #                psi.write({
-    #                    'discount': l.discount,
-    #                    'price': l.price_unit,
-    #                    'date_start': self.date_invoice
-    #                })
-    #            else:
-    #                psi_obj.create({
-    #                    'name': self.partner_id.id,
-    #                    'product_tmpl_id': l.product_id.product_tmpl_id.id,
-    #                    'discount': l.discount,
-    #                    'price': l.price_unit,
-    #                    'date_start': self.date_invoice
-    #                })
-    #    return res
+    def action_invoice_open(self):
+        res = super(AccountMove, self).action_post()
+        if self.type in ['in_invoice', 'in_refund']:
+            psi_obj = self.env['product.supplierinfo']
+            for l in self.invoice_line_ids:
+                psi = psi_obj.search(
+                    [('product_tmpl_id', '=', l.product_id.product_tmpl_id.id), ('partner_id', '=', self.partner_id.id)],
+                    limit=1)
+                if psi:
+                    psi.write({
+                        'discount': l.discount,
+                        'price': l.price_unit,
+                        'date_start': self.date_invoice
+                    })
+                else:
+                    psi_obj.create({
+                        'name': self.partner_id.id,
+                        'product_tmpl_id': l.product_id.product_tmpl_id.id,
+                        'discount': l.discount,
+                        'price': l.price_unit,
+                        'date_start': self.date_invoice
+                    })
+        return res
