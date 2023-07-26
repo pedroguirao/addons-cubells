@@ -6,7 +6,7 @@ from datetime import timedelta
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
-    _order = 'id asc'
+    #_order = 'id asc'
     #_order = 'layout_category_id,id asc'
 
     seller_ids = fields.Many2one(

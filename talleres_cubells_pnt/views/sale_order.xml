@@ -34,11 +34,11 @@
                        context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id,
                        'uom':product_uom, 'company_id': parent.company_id}"/>
             </xpath>
-<!--
+
             <xpath expr="//field[@name='partner_id']/parent::group" position="inside">
                 <field name="pnt_collaborator_id" options="{'no_create': True}"/>
             </xpath>
--->
+
         </field>
     </record>
 
