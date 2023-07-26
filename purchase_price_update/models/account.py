@@ -44,6 +44,6 @@ class AccountMove(models.Model):
                         'product_tmpl_id': l.product_id.product_tmpl_id.id,
                         'discount': l.discount,
                         'price': l.price_unit,
-                        'date_start': self.date_invoice
+                        'date_start': self.invoice_date
                     })
         return res
