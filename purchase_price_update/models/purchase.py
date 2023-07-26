@@ -31,7 +31,7 @@ class PurchaseOrder(models.Model):
         psi_obj = self.env['product.supplierinfo']
         for l in self.order_line:
             psi = psi_obj.search(
-                [('product_tmpl_id', '=', l.product_id.product_tmpl_id.id), ('name', '=', self.partner_id.id)], limit=1)
+                [('product_tmpl_id', '=', l.product_id.product_tmpl_id.id), ('partner_id', '=', self.partner_id.id)], limit=1)
             if psi:
                 psi.write({
                     'discount': l.discount,
