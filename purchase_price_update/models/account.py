@@ -24,7 +24,7 @@ from odoo import models, api
 class AccountInvoice(models.Model):
     _inherit = 'account.move'
 
-    def action_invoice_open(self):
+    def action_post(self):
         res = super(AccountMove, self).action_post()
         if self.type in ['in_invoice', 'in_refund']:
             psi_obj = self.env['product.supplierinfo']
