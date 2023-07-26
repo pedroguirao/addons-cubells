@@ -12,7 +12,7 @@
     'auto_install': False,
     'application': False,
     'depends': [
-        'purchase',
+        'purchase_discount',
         'sale_management',
         'stock',
         'account',
