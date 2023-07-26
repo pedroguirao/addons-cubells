@@ -110,12 +110,12 @@ class SaleOrder(models.Model):
             if product_price:
                 record.product_cost_price = product_price.price
                 record.product_discount_seller = product_price.discount
-                 if fields.Datetime.now() >= product_price.date_start \
-                        and (fields.Datetime.now() <= product_price.date_end or not product_price.date_end) \
-                        and product_price.discount:
+                ########## Ya comentado antes de migrar a v16 #########
+                # if fields.Datetime.now() >= product_price.date_start \
+                #        and (fields.Datetime.now() <= product_price.date_end or not product_price.date_end) \
+                #        and product_price.discount:
 
-                discount_seller = record.product_cost_price * (
-                        product_price.discount / 100)
+                discount_seller = record.product_cost_price * (product_price.discount / 100)
                 record.product_net_cost_price = record.product_cost_price - discount_seller
                 record.price_unit = record.product_net_cost_price
 
