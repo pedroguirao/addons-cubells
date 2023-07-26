@@ -74,12 +74,18 @@ class SaleOrder(models.Model):
     )
 
     def pnt_sort_order_line(self):
-        return True
-    #    i = 1
-    #    for record in sorted(self.order_line, key=lambda x: (
-    #            x.layout_category_id.sequence, x.name)):
-    #        record.sequence = i
-    #        i += 1
+        all_line_ids = self.order_line.sorted(key=lambda r: r.sequence)
+        i, section = 1, 0
+        # Asignar sección a todas las líneas:
+        for li in all_line_ids:
+            if li.display_type == 'line_section': section = li.id
+            li.write({'sequence': i, 'section': section})
+            i += 1
+        # Ordenar alfabéticamente por sección:
+        line_alphabetic_ids = self.order_line.sorted(key=lambda r: (r.section, r.name))
+        for li in line_alphabetic_ids:
+            li['sequence'] = i
+            i += 1
 
     def calc_price_sale_order(self):
         return True
