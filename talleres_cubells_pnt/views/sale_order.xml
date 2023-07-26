@@ -75,6 +75,6 @@
                 <filter name="client_order_ref" string="Client Ref" context="{'group_by':'client_order_ref'}"/>
             </xpath>
         </field>
-    </record>
+    </record>-->
 
 </odoo>

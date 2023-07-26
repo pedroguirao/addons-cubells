@@ -9,6 +9,7 @@ class ResPartner(models.Model):
         print("DEBUG1", self)
         orig_name = super(ResPartner, self).name_get()
         result = []
+        print(orig_name)
         if self.env.context.get('origin') == 'sale_order':
             print("DEBUG2")
 
@@ -37,8 +38,14 @@ class ResPartner(models.Model):
             pt = self.env['product.product'].search([('id', '=', self.env.context.get('default_product'))])
             proveedores = self.env['product.supplierinfo'].search([('product_tmpl_id', '=', pt.product_tmpl_id.id)])#
             #FALTA ORDERNAR POR display_name
+            partners_ids = []
+
+            for p in proveedores:
+                print("p", p.partner_id)
+                partners_ids.append(p.partner_id.id)
+                print(partners_ids)
             args = [
-                ('id', 'in', proveedores.ids)
+                ('id', 'in', partners_ids)
             ]
-            print(proveedores.mapped('display_name'))
+            print(args, proveedores.mapped('display_name'))
         return super(ResPartner, self).name_search(name, args, operator, limit)
