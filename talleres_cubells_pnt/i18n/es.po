@@ -89,10 +89,7 @@ msgstr "Descuento"
 msgid "Descuento Proveedor"
 msgstr "Descuento Proveedor"
 
-#. module: talleres_cubells_pnt
-#: model:ir.model.fields,field_description:talleres_cubells_pnt.field_stock_move_discount
-msgid "Discount"
-msgstr "Descuento"
+
 
 #. module: talleres_cubells_pnt
 #: model:ir.model.fields,field_description:talleres_cubells_pnt.field_pnt_maintenance_equipment_fuel_display_name

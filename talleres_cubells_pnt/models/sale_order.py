@@ -22,10 +22,11 @@ class SaleOrderLine(models.Model):
 
     #@api.onchange('product_id')
     #def _onchange_product_id(self):
+    ##    print("ONCHANGE")
     #    if self.product_id:
     #        self.seller_ids = ''
     #        domain_seller = [
-    #            ('id', 'in', self.product_id.seller_ids.mapped('name').ids)]
+    #            ('id', 'in', self.product_id.seller_ids.ids)]
     #        return {'domain': {'seller_ids': domain_seller}}
 
     @api.onchange('seller_ids')
@@ -34,7 +35,7 @@ class SaleOrderLine(models.Model):
         product_price = self.env['product.supplierinfo'].search(
             [
                 ('product_tmpl_id', '=', self.product_id.product_tmpl_id.id),
-                ('name', '=', self.seller_ids.id),
+                ('partner_id', '=', self.seller_ids.id),
                 ('date_start', '<=', fields.Datetime.now()),
                 '|',
                 ('date_end', '>=', fields.Datetime.now()),
