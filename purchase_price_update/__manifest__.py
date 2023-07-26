@@ -22,7 +22,10 @@
 {
     "name": 'Purchase Price Update',
     "version": '1.0',
-    "depends": ['purchase_discount'],
+    "depends": [
+        'purchase_discount',
+        'account'
+    ],
     "author": "Aselcis consulting",
     "category": 'Account',
     "website": "https://www.aselcis.com",
