@@ -100,7 +100,7 @@ class SaleOrder(models.Model):
                 [
                     ('product_tmpl_id', '=',
                      record.product_id.product_tmpl_id.id),
-                    ('name', '=', record.seller_ids.id),
+                    ('partner_id', '=', record.seller_ids.id),
                     ('date_start', '<=', fields.Datetime.now()),
                     '|',
                     ('date_end', '>=', fields.Datetime.now()),
