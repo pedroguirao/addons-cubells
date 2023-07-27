@@ -54,7 +54,7 @@ class PurchaseOrderLine(models.Model):
 
     date_price = fields.Date('Date price', default=datetime.now().date())
 
-# Comentado 27/07, da error en línea date= (existe en estándar "purchase" 16, y ahora discount es purchase_discount no como en v11)
+#  27/07, da error en línea date= (existe en estándar "purchase" 16, y ahora discount es purchase_discount no como en v11)
     @api.onchange('product_qty', 'product_uom')
     def _onchange_quantity(self):
         res = super(PurchaseOrderLine, self)._onchange_quantity()
