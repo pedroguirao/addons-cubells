@@ -90,16 +90,13 @@ class SaleOrder(models.Model):
     def calc_price_sale_order(self):
         discount_seller = 0
 
-        order_lines = self.env['sale.order.line'].search([
-            ('order_id', '=', self.id)
-        ])
+        order_lines = self.env['sale.order.line'].search([('order_id', '=', self.id),('display_type','=',False)])
 
         for record in order_lines:
 
             product_price = self.env['product.supplierinfo'].search(
                 [
-                    ('product_tmpl_id', '=',
-                     record.product_id.product_tmpl_id.id),
+                    ('product_tmpl_id', '=', record.product_id.product_tmpl_id.id),
                     ('partner_id', '=', record.seller_ids.id),
                     ('date_start', '<=', fields.Datetime.now()),
                     '|',
@@ -110,10 +107,6 @@ class SaleOrder(models.Model):
             if product_price:
                 record.product_cost_price = product_price.price
                 record.product_discount_seller = product_price.discount
-                ########## Ya comentado antes de migrar a v16 #########
-                # if fields.Datetime.now() >= product_price.date_start \
-                #        and (fields.Datetime.now() <= product_price.date_end or not product_price.date_end) \
-                #        and product_price.discount:
 
                 discount_seller = record.product_cost_price * (product_price.discount / 100)
                 record.product_net_cost_price = record.product_cost_price - discount_seller
@@ -122,8 +115,7 @@ class SaleOrder(models.Model):
                 if record.product_margin_price > 0:
                     record.calcula_coste_product()
 
-                margin = record.product_net_cost_price * (
-                        record.product_margin_price / 100)
+                margin = record.product_net_cost_price * (record.product_margin_price / 100)
                 record.price_unit = record.product_net_cost_price + margin
 
     def order_lines_layouted(self):
