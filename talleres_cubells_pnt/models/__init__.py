@@ -2,6 +2,7 @@ from . import purchase
 from . import stock
 from . import product
 from . import sale_order
+from . import sale_order_line
 from . import res_partner
 from . import maintenance
 from . import model
