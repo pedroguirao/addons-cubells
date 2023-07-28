@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<odoo>
+
+    <!-- LINEA COMPRAS TREE INH -->
+    <record id="purchase_order_line_pnt_tree" model="ir.ui.view">
+        <field name="name">purchase.order.line.pnt.tree</field>
+        <field name="model">purchase.order.line</field>
+        <field name="type">tree</field>
+        <field name="priority">90</field>
+        <field name="inherit_id" ref="purchase.purchase_history_tree"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='order_id']" position="after">
+                    <field name="name" optional="show"/>
+                </xpath>
+                <xpath expr="//field[@name='date_approve']" position="after">
+                    <xpath expr="//field[@name='price_unit']" position="move"/>
+                    <field name="discount" optional="show"/>
+                </xpath>
+                <xpath expr="//field[@name='product_uom_qty']" position="after">
+                    <field name="price_subtotal" optional="show"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <!-- LINEA COMPRAS SEARCH INH -->
+    <record id="purchase_order_line_pnt_search" model="ir.ui.view">
+        <field name="name">purchase.order.line.pnt.search</field>
+        <field name="model">purchase.order.line</field>
+        <field name="type">search</field>
+        <field name="priority">90</field>
+        <field name="inherit_id" ref="purchase.purchase_order_line_search"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='order_id']" position="after">
+                    <field name="wo_num"/>
+                </xpath>
+                <xpath expr="//filter[@name='groupby_product']" position="after">
+                    <filter name="groupby_product" string="OT" domain="[]" context="{'group_by' : 'wo_num'}"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+</odoo>
