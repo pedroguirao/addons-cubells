@@ -5,4 +5,4 @@ class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
 
-    date_order_pnt = fields.Datetime('Fecha pedido', related='date_order' store=True)
+    date_order_pnt = fields.Datetime('Fecha pedido', related='date_order', store=True)
