@@ -23,6 +23,43 @@
         </field>
     </record>
 
+    <!-- COMPRAS TREE INH -->
+    <record id="purchase_order_pnt_tree" model="ir.ui.view">
+        <field name="name">purchase.order.pnt.tree</field>
+        <field name="model">purchase.order</field>
+        <field name="type">tree</field>
+        <field name="priority">90</field>
+        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+        <field name="arch" type="xml">
+            <field name="date_order" position="after">
+                <field name="date_order_pnt" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- LINEA COMPRAS TREE INH -->
+    <record id="purchase_order_line_pnt_tree" model="ir.ui.view">
+        <field name="name">purchase.order.line.pnt.tree</field>
+        <field name="model">purchase.order.line</field>
+        <field name="type">tree</field>
+        <field name="priority">90</field>
+        <field name="inherit_id" ref="purchase.purchase_history_tree"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='order_id']" position="after">
+                    <field name="name" optional="show"/>
+                </xpath>
+                <xpath expr="//field[@name='date_approve']" position="after">
+                    <xpath expr="//field[@name='price_unit']" position="move"/>
+                    <field name="discount" optional="show"/>
+                </xpath>
+                <xpath expr="//field[@name='product_uom_qty']" position="after">
+                    <field name="price_subtotal" optional="show"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
     <!-- RECEPCION DE PRODUCTOS TREE -->
     <record id="view_stock_move_pnt_tree" model="ir.ui.view">
         <field name="name">stock.move.pnt.tree</field>
@@ -42,7 +79,6 @@
                     <field name="date_price" string="Date Price"/>
                     <!--<field name="discount" string="Descuento"/>-->
                     <field name="subtotal"></field>
-
                 </xpath>
             </data>
         </field>
