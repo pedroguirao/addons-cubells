@@ -6,7 +6,7 @@ class PurchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'
 
     wo_num = fields.Char('WO Num')
-    date_order_pnt = fields.Datetime('Fecha pedido', related='date_order', store=True)
+    date_order_pnt = fields.Datetime('Fecha pedido', store=True)
 
     #@api.onchange('product_id')
     #def onchange_product_id(self):
