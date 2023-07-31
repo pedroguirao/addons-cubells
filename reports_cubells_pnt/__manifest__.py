@@ -11,10 +11,9 @@
     'installable': True,
     'auto_install': False,
     'application': False,
-    'depends': ['account_payment_partner',
-                'delivery',
+    'depends': ['purchase',
                 'talleres_cubells_pnt',
-                'purchase'],
+                ],
     'data': [
         'reports/report_purchaseorder_document.xml'
     ]
