@@ -16,6 +16,6 @@
                 'talleres_cubells_pnt',
                 'purchase'],
     'data': [
-        'views/report_purchaseorder_document.xml'
+        'reports/report_purchaseorder_document.xml'
     ]
 }
