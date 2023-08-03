@@ -8,16 +8,24 @@
 
 
             <data>
-                <!-- Cabecera -->
+                <!-- Table Cabecera -->
                 <xpath expr="//thead/tr/th[@name='th_description']" position="after">
                     <th name="th_nOT"><strong>Nº OT</strong></th>
                 </xpath>
 
-                <!-- Cuerpo -->
+                <!-- Table Cuerpo -->
                 <xpath expr="//tbody/t/tr/t/td[1]" position="after">
                     <td>
                         <span t-field="order_line.wo_num"/>
                     </td>
+                </xpath>
+                <xpath expr="//tbody/t/tr/t/td[2]" position="replace"/>
+
+                <!-- Feche después de table -->
+                <xpath expr="//table" position="after">
+                    <div>
+                        <p>Expectated Date: <span t-field="o.date_planned"/></p>
+                    </div>
                 </xpath>
             </data>
 
