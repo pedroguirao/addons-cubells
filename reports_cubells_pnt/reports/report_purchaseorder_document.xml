@@ -6,18 +6,21 @@
         <field name="inherit_id" ref="purchase.report_purchaseorder_document"/>
         <field name="arch" type="xml">
 
-                    <!-- Cabecera -->
+            <!-- Cabecera -->
             <data>
                 <xpath expr="//thead/tr/th[@name='th_description']" position="after">
                     <th name="th_nOT"><strong>Nº OT</strong></th>
                 </xpath>
+                <xpath expr="//thead/tr/th[@name='th_taxes']" position="replace"/>
 
-                    <!-- Cuerpo -->
+
+                <!-- Cuerpo -->
                 <xpath expr="//tbody/t/tr/t/td[1]" position="after">
                     <td>
                         <span t-field="line.wo_num"/>
                     </td>
                 </xpath>
+                <xpath expr="//td[@name='td_taxes']" position="replace"/>
             </data>
 
         </field>

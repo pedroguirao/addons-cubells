@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="report_purchasequotation_document_inh_report" model="ir.ui.view">
+        <field name="name">report.purchasequotation.document.inh.report</field>
+        <field name="inherit_id" ref="purchase.report_purchasequotation_document"/>
+        <field name="arch" type="xml">
+
+
+            <data>
+                <!-- Table Cabecera -->
+                <xpath expr="//thead/tr/th[@name='th_description']" position="after">
+                    <th name="th_nOT"><strong>Nº OT</strong></th>
+                </xpath>
+
+                <!-- Table Cuerpo -->
+                <xpath expr="//tbody/t/tr/t/td[1]" position="after">
+                    <td>
+                        <span t-field="order_line.wo_num"/>
+                    </td>
+                </xpath>
+                <xpath expr="//tbody/t/tr/t/td[2]" position="replace"/>
+
+                <!-- Feche después de table -->
+                <xpath expr="//table" position="after">
+                    <div>
+                        <p>Expectated Date: <span t-field="o.date_planned"/></p>
+                    </div>
+                </xpath>
+            </data>
+
+        </field>
+        <field name="type">qweb</field>
+        <field name="priority">999</field>
+    </record>
+</odoo>
