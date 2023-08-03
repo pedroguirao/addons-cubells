@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="report_picking_inh_report" model="ir.ui.view">
+        <field name="name">report.picking.inh.report</field>
+        <field name="inherit_id" ref="stock.report_picking"/>
+        <field name="arch" type="xml">
+
+            <data>
+                <!-- Cabecera -->
+                <xpath expr="//thead[1]/tr/th[2]" position="replace"/>
+
+                <xpath expr="//thead[1]/tr/th[1]" position="before">
+                    <th>
+                        <strong>Quantity</strong>
+                    </th>
+                </xpath>
+
+                <!-- Cuerpo -->
+                <xpath expr="//tbody[1]/t/tr/td[2]" position="replace"/>
+
+                <xpath expr="//tbody[1]/t/tr/td[1]" position="before">
+                    <td>
+                        <span t-if="o.state != 'done'" t-field="ml.reserved_uom_qty"/>
+                        <span t-if="o.state == 'done'" t-field="ml.qty_done"/>
+                        <span t-field="ml.product_uom_id" groups="uom.group_uom"/>
+                    </td>
+                </xpath>
+            </data>
+
+        </field>
+        <field name="type">qweb</field>
+        <field name="priority">999</field>
+    </record>
+</odoo>
