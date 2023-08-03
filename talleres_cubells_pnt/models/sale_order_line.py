@@ -22,14 +22,14 @@ class SaleOrderLine(models.Model):
     @api.onchange('product_id')
     def _get_name_printed(self):
         for record in self:
-            if li.product_id.default_code:
-                caracteres = len(li.name)
-                printedcode = "[" + li.product_id.default_code + "]"
+            nombre = record.name
+            if record.product_id.default_code:
+                printedcode = "[" + record.product_id.default_code + "]"
                 largocode = len(printedcode)
-                orden = li.name.find(printedcode)
+                orden = record.name.find(printedcode)
                 fincodigo = orden + largocode
-                nombre = (li.name[:orden] + li.name[fincodigo:])
-            record['name_printed'] = self.nombre
+                nombre = (record.name[:orden] + record.name[fincodigo:])
+            record['name_printed'] = nombre
     name_printed = fields.Char('Name printed', store=False, compute='_get_name_printed')
 
 
