@@ -6,7 +6,6 @@ class PurchaseOrderLine(models.Model):
 
     wo_num = fields.Char('WO Num')
 
-    @api.onchange('product_id')
     def _get_name_printed(self):
         for record in self:
             name_printed = record.name
