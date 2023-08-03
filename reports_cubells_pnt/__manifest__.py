@@ -11,7 +11,11 @@
     'installable': True,
     'auto_install': False,
     'application': False,
-    'depends': ['purchase',
+    'depends': [
+                'stock'
+                'sale'
+                'account'
+                'purchase',
                 'talleres_cubells_pnt',
                 ],
     'data': [

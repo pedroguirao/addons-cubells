@@ -8,7 +8,9 @@
 
             <!-- Cabecera -->
             <data>
+                <xpath expr="//thead/tr/th[@name='th_taxes']" position="replace"/>
                 <!-- Cuerpo -->
+                <xpath expr="//td[@name='td_taxes']" position="replace"/>
             </data>
 
         </field>

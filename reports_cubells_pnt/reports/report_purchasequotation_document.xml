@@ -20,6 +20,11 @@
                     </td>
                 </xpath>
                 <xpath expr="//tbody/t/tr/t/td[2]" position="replace"/>
+                <xpath expr="//tbody/t/tr/t/td[1]" position="replace">
+                    <td>
+                        <span t-field="line.name_printed"/>
+                    </td>
+                </xpath>
 
                 <!-- Feche después de table -->
                 <xpath expr="//table" position="after">

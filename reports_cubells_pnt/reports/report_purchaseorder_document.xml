@@ -21,6 +21,11 @@
                     </td>
                 </xpath>
                 <xpath expr="//td[@name='td_taxes']" position="replace"/>
+                <xpath expr="//tbody/t/tr/t/td[1]" position="replace">
+                    <td>
+                        <span t-field="line.name_printed"/>
+                    </td>
+                </xpath>
             </data>
 
         </field>
