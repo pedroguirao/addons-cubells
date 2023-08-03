@@ -14,8 +14,8 @@
                 </xpath>
 
                 <!-- Cuerpo -->
-                <xpath expr="//tbody[1]/t/tr/td[2]" position="replace"/>
-                <xpath expr="//tbody[1]/t/tr/td[1]" position="before">
+                <xpath expr="//table[@class='table table-sm'][1]/tbody/tr/td[2]" position="replace"/>
+                <xpath expr="//table[@class='table table-sm'][1]/tbody/tr/td[1]" position="before">
                     <td>
                         <span t-field="move.product_uom_qty"/>
                         <span t-field="move.product_uom"/>
