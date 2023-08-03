@@ -6,7 +6,6 @@ from datetime import timedelta
 class AccountInvoiceLine(models.Model):
     _inherit = 'account.move.line'
 
-    @api.onchange('product_id')
     def _get_name_printed(self):
         for record in self:
             name_printed = record.name

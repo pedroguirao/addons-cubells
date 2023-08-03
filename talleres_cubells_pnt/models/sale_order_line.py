@@ -18,7 +18,6 @@ class SaleOrderLine(models.Model):
     product_discount_seller = fields.Float(string='Descuento Proveedor')
     product_margin_price = fields.Float(string='Margen')
 
-    @api.onchange('product_id')
     def _get_name_printed(self):
         for record in self:
             name_printed = record.name
