@@ -12,9 +12,9 @@
     'auto_install': False,
     'application': False,
     'depends': [
-                'stock'
-                'sale'
-                'account'
+                'stock',
+                'sale',
+                'account',
                 'purchase',
                 'talleres_cubells_pnt',
                 ],
