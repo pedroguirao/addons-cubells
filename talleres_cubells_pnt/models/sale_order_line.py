@@ -18,6 +18,21 @@ class SaleOrderLine(models.Model):
     product_discount_seller = fields.Float(string='Descuento Proveedor')
     product_margin_price = fields.Float(string='Margen')
 
+
+    @api.onchange('product_id')
+    def _get_name_printed(self):
+        for record in self:
+            if li.product_id.default_code:
+                caracteres = len(li.name)
+                printedcode = "[" + li.product_id.default_code + "]"
+                largocode = len(printedcode)
+                orden = li.name.find(printedcode)
+                fincodigo = orden + largocode
+                nombre = (li.name[:orden] + li.name[fincodigo:])
+            record['name_printed'] = self.nombre
+    name_printed = fields.Char('Name printed', store=False, compute='_get_name_printed')
+
+
     #@api.onchange('product_id')
     #def _onchange_product_id(self):
     ##    print("ONCHANGE")

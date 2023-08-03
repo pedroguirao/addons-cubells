@@ -56,6 +56,10 @@ class SaleOrder(models.Model):
                 margin = record.product_net_cost_price * (record.product_margin_price / 100)
                 record.price_unit = record.product_net_cost_price + margin
 
+
+
+
+
     def order_lines_layouted(self):
         return True
     #    report_pages = super(SaleOrder, self).order_lines_layouted()
