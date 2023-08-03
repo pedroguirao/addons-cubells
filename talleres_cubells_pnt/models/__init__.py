@@ -8,4 +8,5 @@ from . import res_partner
 from . import maintenance
 from . import model
 from . import fuel
-from . import invoice
+from . import account_move
+from . import account_move_line
