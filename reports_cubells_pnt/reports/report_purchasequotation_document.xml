@@ -12,6 +12,7 @@
                 <xpath expr="//thead/tr/th[@name='th_description']" position="after">
                     <th name="th_nOT"><strong>Nº OT</strong></th>
                 </xpath>
+                <xpath expr="//thead/tr/th[@name='th_expected_date']" position="replace"/>
 
                 <!-- Table Cuerpo -->
                 <xpath expr="//tbody/t/tr/t/td[1]" position="after">
