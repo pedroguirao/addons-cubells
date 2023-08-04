@@ -6,11 +6,31 @@
         <field name="inherit_id" ref="sale.report_saleorder_document"/>
         <field name="arch" type="xml">
 
-            <!-- Cabecera -->
             <data>
+                <!-- Cabecera -->
                 <xpath expr="//thead/tr/th[@name='th_taxes']" position="replace"/>
+                <xpath expr="//th[@name='th_priceunit']" position="before">
+                    <th name="th_supplier" class="text-end">Supplier</th>
+                </xpath>
+                <xpath expr="//thead/tr/th[4]" position="after">
+                    <th name="th_netprice" class="text-end">Net price</th>
+                </xpath>
+
                 <!-- Cuerpo -->
                 <xpath expr="//td[@name='td_taxes']" position="replace"/>
+                <xpath expr="//tbody/t/tr/t/td[1]/span" position="replace">
+                    <span t-field="line.name_printed"/>
+                </xpath>
+                <xpath expr="//td[@name='td_priceunit']" position="before">
+                    <td name="td_sellerids" class="text-end">
+                        <span t-field="line.seller_ids"/>
+                    </td>
+                </xpath>
+                <xpath expr="//tbody/t/tr/t/td[4]" position="after">
+                    <td name="td_product_net_price" class="text-end">
+                        <span t-field="line.product_net_cost_price"/>
+                    </td>
+                </xpath>
             </data>
 
         </field>
