@@ -20,16 +20,14 @@
                     </td>
                 </xpath>
                 <xpath expr="//tbody/t/tr/t/td[2]" position="replace"/>
-                <xpath expr="//tbody/t/tr/t/td[1]" position="replace">
-                    <td>
+                <xpath expr="//tbody/t/tr/t/td[1]/span" position="replace">
                         <span t-field="line.name_printed"/>
-                    </td>
                 </xpath>
 
                 <!-- Feche después de table -->
                 <xpath expr="//table" position="after">
                     <div>
-                        <p>Expectated Date: <span t-field="o.date_planned"/></p>
+                        <p>Expectated Date: <span t-field="o.date_planned" t-options="{'widget':'date'}"/></p>
                     </div>
                 </xpath>
             </data>
