@@ -13,6 +13,7 @@
             <data>
                 <xpath expr="//field[@name='order_id']" position="after">
                     <field name="name" optional="show"/>
+                    <field name="wo_num"/>
                 </xpath>
                 <xpath expr="//field[@name='date_approve']" position="after">
                     <xpath expr="//field[@name='price_unit']" position="move"/>
