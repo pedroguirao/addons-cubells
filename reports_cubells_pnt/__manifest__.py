@@ -24,6 +24,6 @@
         'reports/report_purchasequotation_document.xml',
         'reports/report_delivery_document.xml',
         'reports/report_saleorder_document.xml',
-        'reports/report_invoice.document.xml',
+        'reports/report_invoice_document.xml',
     ]
 }
