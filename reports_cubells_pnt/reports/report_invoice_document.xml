@@ -9,7 +9,7 @@
             <data>
                 <!-- Cuerpo -->
                 <xpath expr="//td[@name='account_invoice_line_name']/span" position="replace">
-                    <span t-field="order_line.name_printed" t-options="{'widget': 'text'}"/>
+                    <span t-field="line.name_printed" t-options="{'widget': 'text'}"/>
                 </xpath>
             </data>
 
