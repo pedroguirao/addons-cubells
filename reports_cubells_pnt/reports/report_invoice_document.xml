@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <odoo>
 
-    <record id="report_saleorder_document_inh_report" model="ir.ui.view">
-        <field name="name">report.saleorder.document.inh.report</field>
-        <field name="inherit_id" ref="sale.report_saleorder_document"/>
+    <record id="report_invoice_document_inh_report" model="ir.ui.view">
+        <field name="name">report.invoice.document.inh.report</field>
+        <field name="inherit_id" ref="account.report_invoice_document"/>
         <field name="arch" type="xml">
 
             <data>
