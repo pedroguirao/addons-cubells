@@ -19,7 +19,7 @@
                 <!-- Cuerpo -->
                 <xpath expr="//td[@name='td_taxes']" position="replace"/>
                 <xpath expr="//tbody/t/tr/t/td[1]/span" position="replace">
-                    <span t-field="line.name_printed" t-options="{'widget': 'text'}"/>
+                    <span t-field="line.name" t-options="{'widget': 'text'}"/>
                 </xpath>
                 <xpath expr="//td[@name='td_priceunit']" position="before">
                     <td name="td_sellerids" class="text-end">
