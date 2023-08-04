@@ -21,7 +21,7 @@
                 </xpath>
                 <xpath expr="//tbody/t/tr/t/td[2]" position="replace"/>
                 <xpath expr="//tbody/t/tr/t/td[1]/span" position="replace">
-                        <span t-field="line.name_printed"/>
+                        <span t-field="order_line.name_printed"/>
                 </xpath>
 
                 <!-- Feche después de table -->
