@@ -12,10 +12,10 @@
     'auto_install': False,
     'application': False,
     'depends': [
-                'stock',
-                'sale',
+                'sale_management',
                 'account',
                 'purchase',
+                'stock',
                 'talleres_cubells_pnt',
                 ],
     'data': [
