@@ -7,30 +7,25 @@
         <field name="arch" type="xml">
 
             <data>
+                <!-- Tabla -->
                 <!-- Cabecera -->
                 <xpath expr="//thead/tr/th[@name='th_taxes']" position="replace"/>
-                <xpath expr="//th[@name='th_priceunit']" position="before">
-                    <th name="th_supplier" class="text-end">Supplier</th>
+                <xpath expr="//thead/tr/th[@name='th_quantity']" position="replace"/>
+                <xpath expr="//thead/tr/th[@name='th_description']" position="before">
+                  <th name="th_quantity" class="text-end">Quantity</th>
                 </xpath>
-                <xpath expr="//thead/tr/th[4]" position="after">
-                    <th name="th_netprice" class="text-end">Net price</th>
-                </xpath>
-
                 <!-- Cuerpo -->
                 <xpath expr="//td[@name='td_taxes']" position="replace"/>
                 <xpath expr="//tbody/t/tr/t/td[1]/span" position="replace">
                     <span t-field="line.name" t-options="{'widget': 'text'}"/>
                 </xpath>
-                <xpath expr="//td[@name='td_priceunit']" position="before">
-                    <td name="td_sellerids" class="text-end">
-                        <span t-field="line.seller_ids"/>
-                    </td>
+                <xpath expr="//td[@name='td_quantity']" position="replace"/>
+                <xpath expr="//tbody/t/tr/t/td[1]" position="before">
+                  <td name="td_quantity" class="text-end">
+                                    <span t-field="line.product_uom_qty"/>
+                                </td>
                 </xpath>
-                <xpath expr="//tbody/t/tr/t/td[4]" position="after">
-                    <td name="td_product_net_price" class="text-end">
-                        <span t-field="line.product_net_cost_price"/>
-                    </td>
-                </xpath>
+            </data>
             </data>
 
         </field>
