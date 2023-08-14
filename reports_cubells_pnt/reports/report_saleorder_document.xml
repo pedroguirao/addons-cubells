@@ -6,27 +6,45 @@
         <field name="inherit_id" ref="sale.report_saleorder_document"/>
         <field name="arch" type="xml">
 
+
             <data>
-                <!-- Tabla -->
-                <!-- Cabecera -->
+
+                <!-- Renombrar Fecha orden a Fecha -->
+                <xpath expr="/t/t/div/div[2]/div[2]/strong[2]" position="replace">
+                    <strong t-else="">Date:</strong>
+                </xpath>
+
+                <!-- Renombrar Presupuesto a Albarán -->
+                <xpath expr="//h2/span[2]" position="replace">
+                    <span t-elif="doc.state in ['draft','sent']">Delivery note # </span>
+                </xpath>
+
+                <!-- Tabla Cabecera -->
                 <xpath expr="//thead/tr/th[@name='th_taxes']" position="replace"/>
                 <xpath expr="//thead/tr/th[@name='th_quantity']" position="replace"/>
                 <xpath expr="//thead/tr/th[@name='th_description']" position="before">
-                  <th name="th_quantity" class="text-end">Quantity</th>
+                    <th name="th_quantity" class="text-end">Quantity</th>
                 </xpath>
-                <!-- Cuerpo -->
+                <!-- Tabla Cuerpo -->
                 <xpath expr="//td[@name='td_taxes']" position="replace"/>
                 <xpath expr="//tbody/t/tr/t/td[1]/span" position="replace">
                     <span t-field="line.name" t-options="{'widget': 'text'}"/>
                 </xpath>
                 <xpath expr="//td[@name='td_quantity']" position="replace"/>
                 <xpath expr="//tbody/t/tr/t/td[1]" position="before">
-                  <td name="td_quantity" class="text-end">
-                                    <span t-field="line.product_uom_qty"/>
-                                </td>
+                    <td name="td_quantity" class="text-end">
+                        <span t-field="line.product_uom_qty"/>
+                    </td>
+                </xpath>
+
+                <!-- Poner fecha después de la tabla -->
+                <xpath expr="//table" position="after">
+                    <div>
+                        <p>Expectated Date: <span t-field="o.date_planned" t-options="{'widget':'date'}"/></p>
+                    </div>
                 </xpath>
             </data>
-            </data>
+
 
         </field>
         <field name="type">qweb</field>

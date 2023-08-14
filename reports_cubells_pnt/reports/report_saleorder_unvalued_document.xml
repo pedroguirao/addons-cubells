@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <record id="docs_report" model="ir.actions.report">
+        <field name="name">Albarán sin valorar</field>
+        <field name="model">report.saleorder</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">report_cubells_pnt.report_saleorder_unvalued_document</field>
+        <field name="report_file">report_cubells_pnt.report_saleorder_unvalued_document</field>
+        <field name="print_report_name">((str(object.name) or '_'))</field>
+        <field name="attachment">((str(object.name) or '_')+'.pdf')</field>
+        <field name="binding_model_id" ref="model_factura_canje"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_saleorder_unvalued_document">
+        <t t-name="report_saleorder_unvalued_document">
+            <t t-call="web.external_layout">
+            </t>
+        </t>
+    </template>
+
+    <template id="saleorder_unvalued_report">
+        <t t-name="saleorder_unvalued_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!--<t t-set="lang" t-value="o.invoice_user_id.sudo().lang if o.move_type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>-->
+                    <t t-call="report_cubells_pnt.report_saleorder_unvalued_document"/>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
