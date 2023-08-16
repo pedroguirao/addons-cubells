@@ -4,7 +4,7 @@
 
     <record id="docs_report" model="ir.actions.report">
         <field name="name">Albarán sin valorar</field>
-        <field name="model">report.saleorder</field>
+        <field name="model">sale.report_saleorder</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">report_cubells_pnt.report_saleorder_unvalued_document</field>
         <field name="report_file">report_cubells_pnt.report_saleorder_unvalued_document</field>
