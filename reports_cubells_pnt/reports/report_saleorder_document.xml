@@ -37,14 +37,6 @@
                     </td>
                 </xpath>
 
-                <!-- Poner fecha después de la tabla -->
-                <xpath expr="//table" position="after">
-                    <div>
-                        <p>Expectated Date: <span t-field="o.date_planned" t-options="{'widget':'date'}"/></p>
-                    </div>
-                </xpath>
-            </data>
-
 
         </field>
         <field name="type">qweb</field>
