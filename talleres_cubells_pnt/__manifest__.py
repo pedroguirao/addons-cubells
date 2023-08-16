@@ -14,7 +14,6 @@
     'auto_install': False,
     'application': False,
     'depends': [
-        'purchase_discount',
         'sale_management',
         'stock',
         'account',
