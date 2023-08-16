@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <odoo>
 
-    <record id="docs_report" model="ir.actions.report">
+    <record id="albaran_unvalued" model="ir.actions.report">
         <field name="name">Albarán sin valorar</field>
         <field name="model">sale.order</field>
         <field name="report_type">qweb-pdf</field>
