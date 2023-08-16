@@ -36,6 +36,7 @@
                         <span t-field="line.product_uom_qty"/>
                     </td>
                 </xpath>
+            </data>
 
 
         </field>
