@@ -24,7 +24,7 @@
         <t t-name="saleorder_unvalued_report">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="report_cubells_pnt.report_saleorder_unvalued_document"/>
+                    <t t-call="reports_cubells_pnt.report_saleorder_unvalued_document"/>
                 </t>
             </t>
         </t>
