@@ -26,5 +26,6 @@
         'reports/report_saleorder_document.xml',
         'reports/report_invoice_document.xml',
         'reports/report_saleorder_unvalued_document.xml',
+        'reports/ir_action_report.xml',
     ]
 }
