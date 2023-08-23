@@ -207,7 +207,7 @@
         <t t-name="cubells_so_not_valued_report">
             <t t-call="web.external_layout">
                 <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
-               <!--  <t t-set="forced_vat" t-value="doc.fiscal_position_id.foreign_vat"/> So that it appears in the footer of the report instead of the company VAT if it's set -->
+                <t t-set="forced_vat" t-value="doc.fiscal_position_id.foreign_vat"/> <!--So that it appears in the footer of the report instead of the company VAT if it's set -->
                 <t t-set="address">
                     <div t-field="doc.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
                     <p t-if="doc.partner_id.vat"><t t-out="doc.company_id.account_fiscal_country_id.vat_label or 'Tax ID'"/>: <span t-field="doc.partner_id.vat"/></p>
@@ -452,8 +452,8 @@
     <template id="cubells_so_not_valued">
         <t t-name="cubells_so_not_valued">
             <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="o">
-                    <t t-call="reports_cubells_pnt.cubells_so_not_valued_report" t-lang="o.partner_id.lang"/>
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="reports_cubells_pnt.cubells_so_not_valued_report" t-lang="doc.partner_id.lang"/>
                 </t>
             </t>
         </t>
