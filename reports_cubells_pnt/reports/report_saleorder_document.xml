@@ -37,10 +37,10 @@
                         <span t-field="line.seller_ids"/>
                     </td>
                     <td name="td_precio" class="text-end">
-                        <span t-field="line.price_unit"/>
+                        <span t-field="line.product_cost_price"/>
                     </td>
                     <td name="td_dto" class="text-end">
-                        <span t-field="line.discount"/>
+                        <span t-field="line.product_discount_seller"/>
                     </td>
                 </xpath>
                 <xpath expr="//td[@name='td_taxes']" position="replace"/>
