@@ -15,9 +15,9 @@
                 </xpath>
 
                 <!-- Renombrar Presupuesto a Albarán -->
-                <xpath expr="//h2/span[2]" position="replace">
+                <!--<xpath expr="//h2/span[2]" position="replace">
                     <span t-elif="doc.state in ['draft','sent']">Delivery note # </span>
-                </xpath>
+                </xpath>-->
 
                 <!-- Tabla Cabecera -->
                 <xpath expr="//thead/tr/th[@name='th_taxes']" position="replace"/>
@@ -26,7 +26,23 @@
                     <th name="th_ref" class="text-end">Ref</th>
                     <th name="th_quantity" class="text-end">Quantity</th>
                 </xpath>
+                <xpath expr="//thead/tr/th[@name='th_priceunit']" position="before">
+                    <th name="th_proveedor" class="text-end">Proveedor</th>
+                    <th name="th_price_custom" class="text-end">Precio</th>
+                    <th name="th_dto" class="text-end">Dto</th>
+                </xpath>
                 <!-- Tabla Cuerpo -->
+                <xpath expr="//tbody/t/tr/t/td[@name='td_priceunit']" position="before">
+                     <td name="td_proveedor" class="text-end">
+                        <span t-field="line.seller_ids"/>
+                    </td>
+                    <td name="td_precio" class="text-end">
+                        <span t-field="line.price_unit"/>
+                    </td>
+                    <td name="td_dto" class="text-end">
+                        <span t-field="line.discount"/>
+                    </td>
+                </xpath>
                 <xpath expr="//td[@name='td_taxes']" position="replace"/>
 
                 <xpath expr="//tbody/t/tr/t/td[1]/span" position="replace">
@@ -41,6 +57,7 @@
                         <span t-field="line.product_uom_qty"/>
                     </td>
                 </xpath>
+
             </data>
 
 
