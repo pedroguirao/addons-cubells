@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
 
 
-            <data>
+           <data>
 
                 <!-- Renombrar Fecha orden a Fecha -->
                 <xpath expr="/t/t/div/div[2]/div[2]/strong[2]" position="replace">
@@ -23,15 +23,20 @@
                 <xpath expr="//thead/tr/th[@name='th_taxes']" position="replace"/>
                 <xpath expr="//thead/tr/th[@name='th_quantity']" position="replace"/>
                 <xpath expr="//thead/tr/th[@name='th_description']" position="before">
+                    <th name="th_ref" class="text-end">Ref</th>
                     <th name="th_quantity" class="text-end">Quantity</th>
                 </xpath>
                 <!-- Tabla Cuerpo -->
                 <xpath expr="//td[@name='td_taxes']" position="replace"/>
+
                 <xpath expr="//tbody/t/tr/t/td[1]/span" position="replace">
                     <span t-field="line.name" t-options="{'widget': 'text'}"/>
                 </xpath>
                 <xpath expr="//td[@name='td_quantity']" position="replace"/>
                 <xpath expr="//tbody/t/tr/t/td[1]" position="before">
+                     <td name="td_ref" class="text-end">
+                        <span t-field="line.product_id.default_code"/>
+                    </td>
                     <td name="td_quantity" class="text-end">
                         <span t-field="line.product_uom_qty"/>
                     </td>
