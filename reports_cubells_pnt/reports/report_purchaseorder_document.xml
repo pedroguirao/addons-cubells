@@ -105,8 +105,8 @@
                     <table class="table table-sm o_main_table table-borderless mt-4">
                         <thead style="display: table-row-group">
                             <tr>
-                                <th style="text-align:left;" name="th_description"><strong>Description</strong></th>
-                                <th style="text-align:left;" name="th_nOT"><strong>Nº OT</strong></th>
+                                <th class="text-left" name="th_description"><strong>Description</strong></th>
+                                <th class="text-left" name="th_nOT"><strong>Nº OT</strong></th>
                                 <!--
                                 <th name="th_date_req" class="text-center"><strong>Date Req.</strong></th>
                                 -->
@@ -233,9 +233,9 @@
                     <div class="oe_structure"/>
 
                     <h2 class="mt-4">
-                        <span t-if="env.context.get('proforma', False) or is_pro_forma">Pro-Forma Invoice # </span>
-                        <span t-elif="doc.state in ['draft','sent']">Albarán # </span>
-                        <span t-else="">Albarán # </span>
+                        <span t-if="env.context.get('proforma', False) or is_pro_forma">Albarán </span>
+                        <span t-elif="doc.state in ['draft','sent']">Albarán </span>
+                        <span t-else="">Albarán </span>
                         <span t-field="doc.name"/>
                     </h2>
 
