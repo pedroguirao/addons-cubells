@@ -4,7 +4,7 @@
     'version': '16.0.0.0.1',
     'summary': 'Informes',
     'author': 'Punt Sistemes S.L.U.',
-    'contributors': ['Javier Muñoz <jmunoz@puntsistemes.es>'],
+    'contributors': ['Javier Muñoz <jmunoz@puntsistemes.es>', ],
     'website': 'http://www.puntsistemes.es',
     'license': 'AGPL-3',
     'category': 'Report',
