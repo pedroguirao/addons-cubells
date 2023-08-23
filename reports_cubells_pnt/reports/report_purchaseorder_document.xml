@@ -102,12 +102,12 @@
                     <table class="table table-sm o_main_table table-borderless mt-4">
                         <thead style="display: table-row-group">
                             <tr>
-                                <th name="th_description"><strong>Description</strong></th>
-                                <th name="th_nOT"><strong>Nº OT</strong></th>
+                                <th style="text-align:left;" name="th_description"><strong>Description</strong></th>
+                                <th style="text-align:left;" name="th_nOT"><strong>Nº OT</strong></th>
                                 <!--
                                 <th name="th_date_req" class="text-center"><strong>Date Req.</strong></th>
                                 -->
-                                <th name="th_quantity" class="text-end"><strong>Qty</strong></th>
+                                <th style="text-align:left;" name="th_quantity" class="text-end"><strong>Qty</strong></th>
                                 <!--
                                 <th name="th_price_unit" class="text-end"><strong>Unit Price</strong></th>
                                 <th class="text-right">
