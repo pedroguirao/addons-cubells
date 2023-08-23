@@ -35,8 +35,8 @@ msgstr "<strong>Cantidad</strong>"
 
 #. module: reports_cubells_pnt
 #: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_purchasequotation_document_inh_report
-msgid "Expectated Date:"
-msgstr "Fecha prevista:"
+msgid "Date:"
+msgstr "Fecha:"
 
 #. module: reports_cubells_pnt
 #: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_saleorder_document_inh_report

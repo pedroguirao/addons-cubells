@@ -29,7 +29,10 @@
                 <!-- Feche después de table -->
                 <xpath expr="//table" position="after">
                     <div>
-                        <p>Expectated Date: <span t-field="o.date_planned" t-options="{'widget':'date'}"/></p>
+                        <p>Fecha de entrega: <span t-field="o.date_order" t-options="{'widget':'date'}"/></p>
+                    </div>
+                     <div>
+                        <p>Creado por: <span t-field="o.create_uid"/></p>
                     </div>
                 </xpath>
             </data>
