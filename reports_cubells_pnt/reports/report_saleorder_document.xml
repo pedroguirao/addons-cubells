@@ -29,7 +29,7 @@
                 <xpath expr="//thead/tr/th[@name='th_priceunit']" position="before">
                     <th name="th_proveedor" class="text-end">Proveedor</th>
                     <th name="th_price_custom" class="text-end">Precio</th>
-                    <th name="th_dto" class="text-end">Dto</th>
+                    <th name="th_dto" class="text-end">Dto.</th>
                 </xpath>
                 <!-- Tabla Cuerpo -->
                 <xpath expr="//tbody/t/tr/t/td[@name='td_priceunit']" position="before">
@@ -37,10 +37,10 @@
                         <span t-field="line.seller_ids"/>
                     </td>
                     <td name="td_precio" class="text-end">
-                        <span t-field="line.price_unit"/>
+                        <span t-field="line.product_cost_price"/>
                     </td>
                     <td name="td_dto" class="text-end">
-                        <span t-field="line.discount"/>
+                        <span t-field="line.product_discount_seller"/>
                     </td>
                 </xpath>
                 <xpath expr="//td[@name='td_taxes']" position="replace"/>
