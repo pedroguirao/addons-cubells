@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 10:17+0000\n"
-"PO-Revision-Date: 2023-08-04 12:22+0200\n"
+"POT-Creation-Date: 2023-08-24 14:38+0000\n"
+"PO-Revision-Date: 2023-08-24 16:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -15,13 +15,86 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #. module: reports_cubells_pnt
+#: model:ir.actions.report,print_report_name:reports_cubells_pnt.cubells_purchase_order_not_valued
+#: model:ir.actions.report,print_report_name:reports_cubells_pnt.cubells_sale_order_albaran
+#: model:ir.actions.report,print_report_name:reports_cubells_pnt.cubells_sale_order_not_valued
+#: model:ir.actions.report,print_report_name:reports_cubells_pnt.cubells_sale_order_qtor
+msgid "((str(object.name) or ''))"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                                    <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+msgid "<span>Disc.%</span>"
+msgstr "<span>Dto.%</span>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "<span>Options</span>"
+msgstr "<span>Opciones</span>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+msgid "<strong>Description</strong>"
+msgstr "<strong>Descripción</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "<strong>Expiration:</strong>"
+msgstr "<strong>Caducidad:</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "<strong>Fiscal Position Remark:</strong>"
+msgstr "<strong>Posición Fiscal:</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "<strong>Incoterm:</strong>"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
 #: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseorder_document_inh_report
 #: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_purchasequotation_document_inh_report
 msgid "<strong>Nº OT</strong>"
 msgstr ""
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>Fecha pedido:</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+msgid "<strong>Order Deadline:</strong>"
+msgstr "<strong>Fecha Vencimiento:</strong>"
 
 #. module: reports_cubells_pnt
 #: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_delivery_document_inh_report
@@ -29,21 +102,231 @@ msgid "<strong>Ordered</strong>"
 msgstr "<strong>Ordenado</strong>"
 
 #. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "<strong>Payment Mode:</strong>"
+msgstr "<strong>Modo de pago:</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+msgid "<strong>Qty</strong>"
+msgstr "<strong>Qty</strong>"
+
+#. module: reports_cubells_pnt
 #: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_picking_inh_report
 msgid "<strong>Quantity</strong>"
 msgstr "<strong>Cantidad</strong>"
 
 #. module: reports_cubells_pnt
-#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_purchasequotation_document_inh_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+msgid "<strong>Realizado por:</strong>"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+msgid "<strong>Salesperson:</strong>"
+msgstr "<strong>Comercial:</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_saleorder_document_inh_report
+msgid "<strong>Shipping Address:</strong>"
+msgstr "<strong>Dirección de envío:</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "<strong>Shipping Description:</strong>"
+msgstr "<strong>Notas para envío:</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Dirección de envío:</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "<strong>Signature</strong>"
+msgstr "<strong>Firma</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+msgid "<strong>Your Order Reference:</strong>"
+msgstr "<strong>Su referencia de pedido:</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "<strong>Your Reference:</strong>"
+msgstr "<strong>Su referencia:</strong>"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+msgid "Albarán"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model:ir.actions.report,name:reports_cubells_pnt.cubells_sale_order_albaran
+msgid "Albarán Valorado"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model:ir.actions.report,name:reports_cubells_pnt.cubells_sale_order_not_valued
+msgid "Albarán sin Valorar"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+msgid "Cancelled Purchase Order #"
+msgstr "Pedido de compra cancelado #"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_saleorder_document_inh_report
 msgid "Date:"
 msgstr "Fecha:"
 
 #. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "Description"
+msgstr "Descripción"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
 #: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_saleorder_document_inh_report
-msgid "Net price"
-msgstr "Precio Neto"
+msgid "Disc"
+msgstr "Dto"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "Disc.%"
+msgstr "Dto. %"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_purchasequotation_document_inh_report
+msgid "Fecha:"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_saleorder_document_inh_report
+msgid "Invoicing Address:"
+msgstr "Datos de facturación:"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_saleorder_document_inh_report
+msgid "Invoicing and Shipping Address:"
+msgstr "Dirección de facturación y envío:"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_purchaseorder_document_inh_report
+msgid ""
+"Nota: Rogamos realicen un albarán valorado para cada\n"
+"                            pedido realizado, e indiquen en cada albarán el nº de\n"
+"                            pedido."
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model:ir.actions.report,name:reports_cubells_pnt.cubells_sale_order_qtor
+msgid "Oferta / Pedido"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+msgid "Order #"
+msgstr "Pedido "
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+msgid "Pedido de compra #"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model:ir.actions.report,name:reports_cubells_pnt.cubells_purchase_order_not_valued
+msgid "Pedido de compra sin Valorar"
+msgstr ""
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "Picking"
+msgstr "Albarán"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_saleorder_document_inh_report
+msgid "Price"
+msgstr "Precio"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+msgid "Pro-Forma Invoice #"
+msgstr "Factura Proforma: "
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_po_not_valued_report
+msgid "Purchase Order #"
+msgstr "Pedido de compra: "
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_saleorder_document_inh_report
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+msgid "Quotation #"
+msgstr "Oferta: "
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "Quotation Date:"
+msgstr "Fecha oferta: "
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_saleorder_document_inh_report
+msgid "Ref"
+msgstr ""
 
 #. module: reports_cubells_pnt
 #: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_saleorder_document_inh_report
 msgid "Supplier"
 msgstr "Proveedor"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_sale_order_quotation_order_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_albaran_report
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.cubells_so_not_valued_report
+msgid "Unit Price"
+msgstr "Precio ud"
+
+#. module: reports_cubells_pnt
+#: model_terms:ir.ui.view,arch_db:reports_cubells_pnt.report_purchasequotation_document_inh_report
+msgid "User:"
+msgstr "Realizado por:"
