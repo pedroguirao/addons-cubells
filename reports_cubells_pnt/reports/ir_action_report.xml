@@ -38,7 +38,7 @@
             <field name="binding_type">report</field>
         </record>
 
-        <record id="cubells_sale_order_quotation_order" model="ir.actions.report">
+        <record id="cubells_sale_order_qtor" model="ir.actions.report">
             <field name="name">Oferta / Pedido</field>
             <field name="model">sale.order</field>
             <!--<field name="report_type">qweb-pdf</field>-->
