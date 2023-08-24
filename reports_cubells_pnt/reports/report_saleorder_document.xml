@@ -334,8 +334,8 @@
         </t>
     </template>
 
-    <template id="cubells_sale_order_oferta_pedido_report">
-        <t t-name="cubells_sale_order_oferta_pedido_report">
+    <template id="cubells_sale_order_quotation_order_report">
+        <t t-name="cubells_sale_order_quotation_order_report">
             <t t-call="web.external_layout">
                 <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
                 <t t-set="forced_vat" t-value="doc.fiscal_position_id.foreign_vat"/> <!-- So that it appears in the footer of the report instead of the company VAT if it's set -->
@@ -570,11 +570,11 @@
         </t>
     </template>
 
-    <template id="cubells_sale_order_oferta_pedido">
-        <t t-name="cubells_sale_order_oferta_pedido">
+    <template id="cubells_sale_order_quotation_order">
+        <t t-name="cubells_sale_order_quotation_order">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="doc">
-                    <t t-call="reports_cubells_pnt.cubells_sale_order_oferta_pedido_report" t-lang="doc.partner_id.lang"/>
+                    <t t-call="reports_cubells_pnt.cubells_sale_order_quotation_order_report" t-lang="doc.partner_id.lang"/>
                 </t>
             </t>
         </t>
