@@ -15,7 +15,7 @@
                 </xpath>
 
                 <!-- Modificar layout de direcciones -->
-                <xpath expr="/t/t[@t-set='address']" position="replace">
+                <xpath expr="/t/t/t[@t-set='address']" position="replace">
                     <t t-set="address">
                         <strong>
                             <t t-if="doc.partner_shipping_id == doc.partner_invoice_id">
@@ -30,7 +30,7 @@
                     </t>
                 </xpath>
 
-                <xpath expr="/t/t[4]/t" position="replace">
+                <xpath expr="/t/t/t[4]/t" position="replace">
                     <t t-set="information_block">
                         <!--<strong>
                             <t t-if="doc.partner_shipping_id == doc.partner_invoice_id">
