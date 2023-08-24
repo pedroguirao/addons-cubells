@@ -61,9 +61,9 @@
                     <th name="th_quantity" class="text-end">Quantity</th>
                 </xpath>
                 <xpath expr="//thead/tr/th[@name='th_priceunit']" position="before">
-                    <th name="th_proveedor" class="text-end">Proveedor</th>
-                    <th name="th_price_custom" class="text-end">Precio</th>
-                    <th name="th_dto" class="text-end">Dto.</th>
+                    <th name="th_proveedor" class="text-end">Supplier</th>
+                    <th name="th_price_custom" class="text-end">Price</th>
+                    <th name="th_dto" class="text-end">Disc</th>
                 </xpath>
                 <!-- Tabla Cuerpo -->
                 <xpath expr="//tbody/t/tr/t/td[@name='td_priceunit']" position="before">
@@ -140,7 +140,7 @@
                     <h2 class="mt-4">
                         <span t-if="env.context.get('proforma', False) or is_pro_forma">Albarán </span>
                         <span t-elif="doc.state in ['draft','sent']">Albarán </span>
-                        <span t-else="">Albarán </span>
+                        <span t-else="">Picking </span>
                         <span t-field="doc.name"/>
                     </h2>
 
@@ -414,8 +414,8 @@
                                 <th name="th_ref" class="text-end">Ref</th>
                                 <th name="th_quantity" class="text-end">Quantity</th>
                                 <th name="th_description" class="text-start">Description</th>
-                                <th name="th_price_custom" class="text-end">Precio</th>
-                                <th name="th_dto" class="text-end">Dto</th>
+                                <th name="th_price_custom" class="text-end">Price</th>
+                                <th name="th_dto" t-if="display_discount" class="text-end">Disc</th>
                                 <th name="th_priceunit" class="text-end">Unit Price</th>
                                 <th name="th_discount" t-if="display_discount" class="text-end">
                                     <span>Disc.%</span>

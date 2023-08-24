@@ -29,9 +29,9 @@
                 </xpath>
                 <xpath expr="//t/t/div/p" position="after">
                     <div>
-                        <p>Nota: Rogamos realicen un albarán valorado para cada
-                            pedido realizado, e indiquen en cada albarán el nº de
-                            pedido.</p>
+                        <p>Please make out a delivery note for each order placed.
+                            order placed, and indicate on each delivery note the order number.
+                            order number on each delivery note.</p>
                     </div>
                 </xpath>
             </data>
@@ -70,7 +70,7 @@
                     <div class="oe_structure"/>
 
                     <div class="mt-4">
-                        <h2 t-if="o.state in ['draft', 'sent', 'to approve']">Pedido de compra #<span t-field="o.name"/></h2>
+                        <h2 t-if="o.state in ['draft', 'sent', 'to approve']">Purchase Order #<span t-field="o.name"/></h2>
                         <h2 t-if="o.state in ['purchase', 'done']">Purchase Order #<span t-field="o.name"/></h2>
                         <h2 t-if="o.state == 'cancel'">Cancelled Purchase Order #<span t-field="o.name"/></h2>
                     </div>
@@ -80,7 +80,7 @@
                             <!--
                             <strong>Purchase Representative:</strong>
                             -->
-                            <strong>Realizado por:</strong>
+                            <strong>User:</strong>
                             <p t-field="o.user_id" class="m-0"/>
                         </div>
                         <div t-if="o.partner_ref" class="col-3 bm-2">
@@ -241,9 +241,9 @@
                     <div class="oe_structure"/>
 
                     <h2 class="mt-4">
-                        <span t-if="env.context.get('proforma', False) or is_pro_forma">Albarán </span>
-                        <span t-elif="doc.state in ['draft','sent']">Albarán </span>
-                        <span t-else="">Albarán </span>
+                        <span t-if="env.context.get('proforma', False) or is_pro_forma">Picking </span>
+                        <span t-elif="doc.state in ['draft','sent']">Picking </span>
+                        <span t-else="">Picking </span>
                         <span t-field="doc.name"/>
                     </h2>
 
@@ -254,7 +254,7 @@
                         </div>
                         <div t-if="doc.date_order" class="col-auto col-3 mw-100 mb-2" name="informations_date">
                             <strong t-if="doc.state in ['draft', 'sent']">Quotation Date:</strong>
-                            <strong t-else="">Fecha:</strong>
+                            <strong t-else="">Date:</strong>
                             <p class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/>
                         </div>
                         <div t-if="doc.validity_date and doc.state in ['draft', 'sent']" class="col-auto col-3 mw-100 mb-2" name="expiration_date">
