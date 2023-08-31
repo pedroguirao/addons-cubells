@@ -40,7 +40,7 @@ class AccountMove(models.Model):
                     })
                 else:
                     psi_obj.create({
-                        'name': self.partner_id.id,
+                        'partner_id': self.partner_id.id,
                         'product_tmpl_id': l.product_id.product_tmpl_id.id,
                         'discount': l.discount,
                         'price': l.price_unit,
