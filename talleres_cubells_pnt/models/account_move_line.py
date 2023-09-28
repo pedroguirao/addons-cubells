@@ -18,3 +18,11 @@ class AccountInvoiceLine(models.Model):
             record['name_printed'] = name_printed
     name_printed = fields.Char('Name printed', store=False, compute='_get_name_printed')
 
+
+    @api.depends("product_id")
+    def _compute_name(self):
+        super()._compute_name()
+        for line in self:
+            if line.product_id:
+                line.name = line.product_id.description_sale
+

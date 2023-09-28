@@ -1,22 +1,17 @@
-
 from odoo import models, api, fields
 from datetime import timedelta
 
 
 class SaleOrderLine(models.Model):
-    _inherit = 'sale.order.line'
+    _inherit = "sale.order.line"
 
-    section = fields.Integer('Section', store=True)
-    seller_ids = fields.Many2one(
-        comodel_name="res.partner",
-        string='Proveedor'
-    )
+    section = fields.Integer("Section", store=True)
+    seller_ids = fields.Many2one(comodel_name="res.partner", string="Proveedor")
 
-    product_cost_price = fields.Float(string='Precio Coste')
-    product_net_cost_price = fields.Float(string='Precio Coste Neto',
-                                          default=0.0)
-    product_discount_seller = fields.Float(string='Descuento Proveedor')
-    product_margin_price = fields.Float(string='Margen')
+    product_cost_price = fields.Float(string="Precio Coste")
+    product_net_cost_price = fields.Float(string="Precio Coste Neto", default=0.0)
+    product_discount_seller = fields.Float(string="Descuento Proveedor")
+    product_margin_price = fields.Float(string="Margen")
 
     def _get_name_printed(self):
         for record in self:
@@ -26,13 +21,13 @@ class SaleOrderLine(models.Model):
                 lencode = len(printedcode)
                 position_start = record.name.find(printedcode)
                 position_end = position_start + lencode
-                name_printed = (record.name[:position_start] + record.name[position_end:])
-            record['name_printed'] = name_printed
-    name_printed = fields.Char('Name printed', store=False, compute='_get_name_printed')
+                name_printed = record.name[:position_start] + record.name[position_end:]
+            record["name_printed"] = name_printed
 
+    name_printed = fields.Char("Name printed", store=False, compute="_get_name_printed")
 
-    #@api.onchange('product_id')
-    #def _onchange_product_id(self):
+    # @api.onchange('product_id')
+    # def _onchange_product_id(self):
     ##    print("ONCHANGE")
     #    if self.product_id:
     #        self.seller_ids = ''
@@ -40,31 +35,30 @@ class SaleOrderLine(models.Model):
     #            ('id', 'in', self.product_id.seller_ids.ids)]
     #        return {'domain': {'seller_ids': domain_seller}}
 
-    @api.onchange('seller_ids')
+    @api.onchange("seller_ids")
     def _onchange_seller_ids(self):
         discount_seller = 0
-        product_price = self.env['product.supplierinfo'].search(
+        product_price = self.env["product.supplierinfo"].search(
             [
-                ('product_tmpl_id', '=', self.product_id.product_tmpl_id.id),
-                ('partner_id', '=', self.seller_ids.id),
-                ('date_start', '<=', fields.Datetime.now()),
-                '|',
-                ('date_end', '>=', fields.Datetime.now()),
-                ('date_end', '=', False),
+                ("product_tmpl_id", "=", self.product_id.product_tmpl_id.id),
+                ("partner_id", "=", self.seller_ids.id),
+                ("date_start", "<=", fields.Datetime.now()),
+                "|",
+                ("date_end", ">=", fields.Datetime.now()),
+                ("date_end", "=", False),
             ]
         )
 
         self.product_cost_price = product_price.price
         self.product_discount_seller = product_price.discount
-        discount_seller = self.product_cost_price * (
-                product_price.discount / 100)
+        discount_seller = self.product_cost_price * (product_price.discount / 100)
         self.product_net_cost_price = self.product_cost_price - discount_seller
 
         self.price_unit = self.product_net_cost_price
         if self.product_margin_price > 0:
             self.calcula_coste_product()
 
-    @api.onchange('product_margin_price')
+    @api.onchange("product_margin_price")
     def _onchange_product_margin_price(self):
         if self.seller_ids:
             self.calcula_coste_product()
@@ -73,3 +67,9 @@ class SaleOrderLine(models.Model):
         margin = self.product_net_cost_price * (self.product_margin_price / 100)
         self.price_unit = self.product_net_cost_price + margin
 
+    @api.depends("product_id")
+    def _compute_name(self):
+        super()._compute_name()
+        for line in self:
+            if line.product_id:
+                line.name = line.product_id.description_sale
